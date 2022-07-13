@@ -1,11 +1,14 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Recursive:wght@300;400;500;600;700;800;900&display=swap"); */
-
+/* Google Font import */
 @import url("https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+:root {
+  --general-border: solid 1px black;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: "Recursive", sans-serif; */
   font-family: "Azeret Mono", monospace;
 }
 
@@ -69,8 +72,8 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 10vh;
-  border-top: solid 2px black;
-  border-bottom: solid 2px black;
+  border-top: var(--general-border);
+  border-bottom: var(--general-border);
   position: sticky;
   top: 0;
   background-color: white;
@@ -87,7 +90,7 @@ body {
 #navbar li a {
   color: black;
   text-decoration: none;
-  padding: 0 20px;
+  padding: 0 40px;
   font-size: 17px;
   font-weight: 200;
   color: #4b4b4b;
@@ -117,7 +120,7 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 90vh;
-  border-bottom: solid 2px black;
+  border-bottom: var(--general-border);
 }
 
 #hero .hero-right {
@@ -176,7 +179,7 @@ body {
 #product1 .featured-title {
   padding: 50px;
   height: 200px;
-  border-bottom: solid 2px black;
+  border-bottom: var(--general-border);
 }
 
 #product1 .pro-container {
@@ -195,7 +198,7 @@ body {
   align-items: center;
   border-left: solid 1px black;
   border-right: solid 1px black;
-  border-bottom: solid 2px black;
+  border-bottom: var(--general-border);
 }
 
 #product1 .pro .img-container {
@@ -210,7 +213,7 @@ body {
 
 #product1 .pro .desc {
   padding: 0 10px;
-  border-top: solid 2px black;
+  border-top: var(--general-border);
   display: block;
   width: 100%;
   height: 20%;
@@ -256,7 +259,7 @@ body {
 
 .services-title {
   padding: 50px;
-  border-bottom: solid 2px black;
+  border-bottom: var(--general-border);
 }
 
 .services-container {
@@ -264,14 +267,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: solid 2px black;
+  border-bottom: var(--general-border);
 }
 
 .services-img {
   width: 50%;
   height: 100%;
   overflow: hidden;
-  border-left: solid 2px black;
+  border-left: var(--general-border);
 }
 
 .services-img img {
@@ -315,10 +318,23 @@ body {
   font-size: 15px;
 }
 
+@media (max-width: 570px) {
+  .delivery {
+    height: unset;
+    flex-direction: column;
+  }
+  .delivery div {
+    width: 40%;
+  }
+  .delivery div {
+    margin: 20px 0;
+  }
+}
+
 /* --- Subscribe section --- */
 
 .subscribe {
-  padding: 0 20px;
+  padding: 0 40px;
   height: 15vh;
   display: flex;
   justify-content: space-between;
@@ -329,7 +345,7 @@ body {
 .subscribe input,
 .subscribe button {
   border: unset;
-  border-bottom: solid 2px black;
+  border-bottom: var(--general-border);
   background-color: unset;
   margin-left: 20px;
 }
@@ -346,23 +362,45 @@ body {
   font-weight: 600;
 }
 
+@media (max-width: 570px) {
+  .subscribe {
+    padding: 0 20px;
+    height: 15vh;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .subscribe input,
+  .subscribe button {
+    margin-left: 0;
+  }
+
+  .subscribe-inputs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
 /* --- Footer section --- */
 
-.footer {
+.footer-container {
   height: 30vh;
   width: 100%;
+  padding: 0 40px;
   background-color: rgb(240, 240, 240);
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: solid 2px black;
-  border-bottom: solid 2px black;
+  border-top: var(--general-border);
+  border-bottom: var(--general-border);
 }
 
-.footer .footer-logo img {
+.footer-logo img {
   width: 70%;
   display: block;
-  margin: auto;
 }
 
 .footer-logo,
@@ -408,14 +446,35 @@ body {
   font-weight: 600;
 }
 
+.footer-credits h5 {
+  padding: 10px 0;
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 200;
+}
+
 @media (max-width: 570px) {
-  .footer {
-    flex-wrap: wrap;
+  .footer-container {
+    flex-direction: column;
+    height: unset;
   }
+
   .footer-logo,
   .footer-slogan,
   .footer-menu,
   .footer-social {
-    width: 80%;
+    width: 100%;
+    padding: 7px 10px;
+    border-bottom: var(--general-border);
+  }
+
+  .footer-logo img {
+    width: 30%;
+    margin: unset;
+    padding: 20px 0;
+  }
+  .footer-menu ul,
+  .footer-social ul {
+    margin: unset;
   }
 }

@@ -44,31 +44,3 @@ function logOut() {
     window.location = "index.html";
   }, 1000);
 }
-
-// get products from shopify shop
-
-function getRecipes(data) {
-  let url = "https://rihanbackgrounds.myshopify.com/products.json";
-  fetch(url)
-    .then((res) => res.json())
-    .then((data) => printRecipesHtml(data))
-    .catch((err) => console.log("err"));
-}
-
-function printRecipesHtml(recipes) {
-  console.log(recipes);
-
-  // if (recipes.meals) {
-  //     recipes.meals.forEach(function(item) {
-  //         resultsAreaHtml.innerHTML += `<div class="result-item" >
-  //                   <img class="result-img" src="${item.strMealThumb}" data-id="${item.idMeal}" alt="" />
-  //                   <h2>${item.strMeal}</h2>
-
-  //         </div>`;
-  //     });
-  // } else {
-  //     alert("no data available.");
-  // }
-}
-
-getRecipes();

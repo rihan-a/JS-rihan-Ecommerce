@@ -17,7 +17,7 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
     />
-    <title>rihan store | Login</title>
+    <title>rihan store | Register</title>
   </head>
 
   <body>
@@ -41,13 +41,9 @@
       <div class="header-right">
         <ul id="navbar">
           <li><a href="contact.html">Contact</a></li>
-
+          
           <li class="active" id="not-signed-in">
             <a href="login.html">Login</a>
-          </li>
-
-          <li id="signed-in-user">
-            <a href="#"> Logout</a>
           </li>
 
           <li>
@@ -60,9 +56,10 @@
     <!-- Login section -->
 
     <section class="login">
-      <h3>Login</h3>
+      <h3>Create a new account</h3>
 
       <form class="login-form" action="">
+        <input type="text" placeholder="Enter your Username" id="username" />
         <input type="email" placeholder="Enter your email" id="email" />
         <input
           type="password"
@@ -70,9 +67,7 @@
           id="password"
         />
         <div class="sign-in">
-          <input type="submit" id="login-btn" value="Sign In" />
-
-          <a href="register.html"> <h4>Create a new account</h4></a>
+          <input type="submit" value="Sign up" id="sign-up" />
         </div>
       </form>
     </section>
@@ -128,6 +123,7 @@
       </div>
     </section>
 
-    <script src="./assets/script/login.js"></script>
+    <script src="./assets/script/script.js"></script>
+    <script src="./assets/script/register.js"></script>
   </body>
 </html>

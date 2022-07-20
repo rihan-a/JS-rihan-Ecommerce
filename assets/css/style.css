@@ -1,5 +1,6 @@
 /* Google Font import */
 @import url("https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css");
 
 :root {
   --general-border: solid 1px black;
@@ -65,6 +66,16 @@ body {
   width: 100%;
 }
 
+.container {
+  padding: 0 40px;
+}
+
+@media (max-width: 799px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
 /* ---- Header Start ----- */
 
 #header {
@@ -99,10 +110,10 @@ body {
   text-transform: uppercase;
 }
 .header-left {
-  width: 20%;
+  width: 22%;
 }
 .header-right {
-  width: 20%;
+  width: 22%;
 }
 
 #navbar li a:hover,
@@ -118,6 +129,15 @@ body {
 }
 .header-hamburger {
   display: none;
+}
+
+#signed-in-user {
+  display: none;
+}
+
+#signed-in-user i {
+  font-style: unset;
+  text-decoration: none;
 }
 
 @media (max-width: 799px) {
@@ -184,7 +204,7 @@ body {
 
 /* --- Header end --- */
 
-/* ----------  HOME PAGE  ---------- */
+/* --------------------------------  HOME PAGE  ----------------------------------------- */
 
 /* --- Hero start --- */
 
@@ -311,18 +331,17 @@ body {
 }
 
 #product1 .pro .img-container {
-  height: 80%;
-  width: 100%;
   overflow: hidden;
 }
 
 #product1 .pro img {
   width: 100%;
+  height: 100%;
   border-bottom: var(--general-border);
 }
 
 #product1 .pro .desc {
-  padding: 0 10px;
+  padding: 5px 10px;
 
   display: block;
   width: 100%;
@@ -339,6 +358,10 @@ body {
   color: darkgray;
 }
 
+.pro .star i:hover {
+  color: black;
+}
+
 #product1 .pro .desc-price {
   width: 100%;
   display: flex;
@@ -347,19 +370,34 @@ body {
   padding: 10px 0;
 }
 
-#product1 .pro .desc-price i {
+#product1 .pro .desc-price a {
+  text-decoration: none;
+  height: 30px;
+  width: 30px;
+  font-size: 1.4rem;
+  font-weight: 600;
   color: rgb(87, 87, 87);
-  transition: all 0.2s ease-in;
+  border: solid 1px black;
+  transition: all 0.1s ease-in;
 }
 
-#product1 .pro .desc-price i:hover {
-  color: rgb(22, 115, 255);
+#product1 .pro .desc-price a:hover {
+  color: white;
+  background-color: black;
 }
 
 #product1 .pro .desc-brand {
   color: rgb(87, 87, 87);
   font-size: 0.85rem;
   font-weight: 300;
+}
+
+.pro:hover {
+  cursor: pointer;
+}
+
+.pro:hover img {
+  padding: 5px;
 }
 
 @media (max-width: 700px) {
@@ -670,5 +708,97 @@ body {
   .footer-menu ul,
   .footer-social ul {
     margin: unset;
+  }
+}
+
+/* ----------------------------- HOME PAGE END --------------------------- */
+
+/* ---------------------------- LOGIN PAGE START ------------------------- */
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: var(--general-border);
+}
+
+.login h3 {
+  padding: 30px 40px;
+  width: 100%;
+
+  border-bottom: var(--general-border);
+}
+
+.login-form {
+  margin: 50px;
+  padding: 40px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sign-in {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-form input {
+  padding: 5px 0;
+  margin-bottom: 50px;
+  border: unset;
+  background-color: unset;
+  margin-left: 20px;
+  font-size: 1rem;
+}
+.login-form > input {
+  border-bottom: var(--general-border);
+}
+
+.login-form input:focus {
+  outline: none;
+}
+
+.sign-in input,
+.sign-in a {
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.sign-in input {
+  padding: 5px;
+  border: solid 1px black;
+  transition: all 0.2s ease-in;
+}
+
+.sign-in input:hover,
+.sign-in h4:hover {
+  background-color: lightgray;
+}
+
+.sign-in h4 {
+  margin-left: 20px;
+  padding: 5px;
+  border: solid 1px black;
+  transition: all 0.2s ease-in;
+}
+
+@media (max-width: 700px) {
+  .login h3 {
+    padding: 20px 20px;
+  }
+
+  .login-form {
+    margin: 30px;
+    padding: 20px;
+    width: 90%;
+  }
+  .sign-in {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 }

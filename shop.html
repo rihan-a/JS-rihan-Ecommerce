@@ -7,13 +7,17 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link
       rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css"
+    />
+    <link
+      rel="stylesheet"
       href="https://cdn-uicons.flaticon.com/uicons-bold-straight/css/uicons-bold-straight.css"
     />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
     />
-    <title>rihan Store | Shop</title>
+    <title>rihan store | Shop</title>
   </head>
 
   <body>
@@ -37,7 +41,13 @@
       <div class="header-right">
         <ul id="navbar">
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="login.html">Login</a></li>
+
+          <li id="not-signed-in"><a href="login.html">Login</a></li>
+
+          <li id="signed-in-user">
+            <a href="#"> Logout</a>
+          </li>
+
           <li>
             <a href="cart.html">Cart(0)</a>
           </li>

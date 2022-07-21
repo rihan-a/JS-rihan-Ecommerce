@@ -335,7 +335,7 @@ body {
 
 #product1 .pro .img-container {
   overflow: hidden;
-  height: 380px;
+  height: 350px;
   width: 100%;
   border-bottom: var(--general-border);
 }
@@ -344,7 +344,6 @@ body {
   max-width: 100%;
   width: auto;
   height: auto;
-  border-bottom: var(--general-border);
 }
 
 #product1 .pro .desc {

@@ -18,7 +18,7 @@
   </head>
 
   <body>
-    <!-- Header section -->
+    <!----------- Header section ---------->
     <section id="header">
       <div class="header-left">
         <ul id="navbar">
@@ -42,13 +42,65 @@
           <li id="not-signed-in"><a href="login.html">Login</a></li>
 
           <li id="signed-in-user">
-            <a href="#"> Logout</a>
+            <a href="#/"> Logout</a>
           </li>
           <li>
-            <a href="cart.html">Cart(0)</a>
+            <a href="#/" class="cart-btn">Cart(0)</a>
           </li>
         </ul>
       </div>
+
+      <!----------------- Cart Sidebar ---------------->
+      <aside class="cart-sidebar" value="closed">
+        <h3>Cart</h3>
+        <!-- product in cart -->
+        <div class="cart-pro">
+          <div class="img-container">
+            <img src="./assets/imgs/Mug-s.jpg" alt="" />
+          </div>
+          <div class="cart-desc">
+            <span class="remove-pro">X</span>
+            <div class="pro-name">
+              <span class="pro-brand"> Stoneware</span>
+              <h4>Ecru Mug</h4>
+              <span class="pro-minus">-</span>
+              <span class="pro-count">1</span>
+              <span class="pro-plus">+</span>
+            </div>
+            <div class="pro-price">
+              <h5>€15,00</h5>
+            </div>
+          </div>
+        </div>
+        <!-- product in cart -->
+        <div class="cart-pro">
+          <div class="img-container">
+            <img src="./assets/imgs/small-plate-s.jpg" alt="" />
+          </div>
+          <div class="cart-desc">
+            <span class="remove-pro">X</span>
+            <div class="pro-name">
+              <span class="pro-brand"> Stoneware</span>
+              <h4>Ecru Plate S 10cm</h4>
+              <span class="pro-minus">-</span>
+              <span class="pro-count">1</span>
+              <span class="pro-plus">+</span>
+            </div>
+            <div class="pro-price">
+              <h5>€15,00</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- subtoal / checkout -->
+        <div class="checkout">
+          <div class="cart-subtotal">
+            <h5>Subtotal</h5>
+            <h5>€30,00</h5>
+          </div>
+          <input type="submit" value="CHECK OUT" />
+        </div>
+      </aside>
     </section>
 
     <!-- Hero section -->

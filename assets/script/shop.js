@@ -33,8 +33,8 @@ async function printProducts() {
     items.products.forEach(function (item) {
       productsContainer.innerHTML += `<div class="pro">
       <div class="img-container">
-        <img src="${item.images[0].src}"/>
-      </div>
+        <img src="${item.images[0].src}" alt="${item.title}"/>
+      </div> 
       <div class="desc">
         <span class="desc-brand"> Backdrops</span>
         <h4>${item.title}</h4>
@@ -91,10 +91,11 @@ function updateCart() {
 let cartsidebar = document.querySelector(".cart-products");
 
 function renderCartItems() {
+  cartsidebar.innerHTML = ""; // clear cart
   cart.forEach((item) => {
-    cartsidebar.innerHTML = `<div class="cart-pro">
+    cartsidebar.innerHTML += `<div class="cart-pro">
         <div class="img-container">
-          <img src="${item.images[0].src}" alt="" />
+          <img src="${item.images[0].src}" alt="${item.title}" />
         </div>
         <div class="cart-desc">
           <span class="remove-pro">X</span>

@@ -73,7 +73,7 @@ function logOut() {
   }, 1000);
 }
 
-// -----  Cart product count  --------
+// -----  Cart product count ( - / + )  --------
 let cartMinusBtn = document.querySelector(".pro-minus");
 let cartPlusBtn = document.querySelector(".pro-plus");
 let productCountDom = document.querySelector(".pro-count");

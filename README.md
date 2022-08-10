@@ -1,2 +1,3 @@
 # JS-rihan-Ecommerce
-rihan store e-commerce website using HTML - CSS - JS
+rihan store 
+E-commerce website using HTML - CSS - Vanilla JS

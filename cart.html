@@ -17,7 +17,7 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
     />
-    <title>rihan store | Shop</title>
+    <title>rihan store | Cart</title>
   </head>
 
   <body>
@@ -26,7 +26,7 @@
       <div class="header-left">
         <ul id="navbar">
           <li><a href="index.html">Home</a></li>
-          <li><a class="active" href="shop.html">Shop</a></li>
+          <li><a href="shop.html">Shop</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
       </div>
@@ -42,45 +42,36 @@
         <ul id="navbar">
           <li><a href="contact.html">Contact</a></li>
 
-          <li id="not-signed-in"><a href="login.html">Login</a></li>
+          <li id="not-signed-in">
+            <a href="login.html">Login</a>
+          </li>
 
           <li id="signed-in-user">
             <a href="#"> Logout</a>
           </li>
 
           <li>
-            <a href="cart.html" class="cart-btn">Cart(0)</a>
+            <a href="cart.html" class="cart-btn active">Cart(0)</a>
           </li>
         </ul>
       </div>
     </section>
 
-    <!---- CART SIDEBAR----->
+    <!-- Cart section -->
 
-    <!-- Shop section -->
+    <section class="cart-section">
+      <h3>Cart</h3>
 
-    <section id="product1">
-      <h3>Shop</h3>
-      <div class="pro-container">
-        <!-- Loading spinner -->
-        <div class="loading-page">
-          <div class="lds-spinner">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
+      <div class="cart-products-container">
+        <!--  Inject Html from JS -->
+      </div>
+      <!-- subtoal / checkout -->
+      <div class="checkout">
+        <div class="cart-subtotal">
+          <h5>Subtotal</h5>
+          <h5 class="cart-total-amout">€ 00,00</h5>
         </div>
-
-        <!-- products will be injected by JS -->
+        <input type="submit" value="CHECK OUT" />
       </div>
     </section>
 
@@ -94,7 +85,7 @@
         <input
           type="email"
           placeholder="EMAIL ADDRESS
-              "
+          "
         />
         <button>SUBSCRIBE →</button>
       </div>
@@ -136,7 +127,6 @@
       </div>
     </section>
 
-    <script src="./assets/script/script.js"></script>
-    <script src="./assets/script/shop.js"></script>
+    <script src="./assets/script/cart.js"></script>
   </body>
 </html>

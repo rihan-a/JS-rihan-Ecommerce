@@ -22,27 +22,6 @@ function showHideMenu() {
 
 // Hamburger menu end -------------
 
-// Cart Sidebar -------------------
-let sideBar = document.querySelector(".cart-sidebar");
-let cartBtn = document.querySelector(".cart-btn");
-
-cartBtn.addEventListener("click", showHideSidebar);
-
-// function to show/hide the cart sidebar
-function showHideSidebar() {
-  if (sideBar.value == "opened") {
-    sideBar.style.display = "none";
-    sideBar.value = "closed";
-    cartBtn.classList.remove("active");
-  } else {
-    sideBar.style.display = "unset";
-    sideBar.value = "opened";
-    cartBtn.classList.add("active");
-  }
-}
-
-hamburgerMenu.addEventListener("click", closeSidebar);
-
 function closeSidebar() {
   if (sideBar.value == "opened") {
     sideBar.style.display = "none";
@@ -74,24 +53,24 @@ function logOut() {
 }
 
 // -----  Cart product count ( - / + )  --------
-let cartMinusBtn = document.querySelector(".pro-minus");
-let cartPlusBtn = document.querySelector(".pro-plus");
-let productCountDom = document.querySelector(".pro-count");
-let productCount = 1;
+// let cartMinusBtn = document.querySelector(".pro-minus");
+// let cartPlusBtn = document.querySelector(".pro-plus");
+// let productCountDom = document.querySelector(".pro-count");
+// let productCount = 1;
 
-cartMinusBtn.addEventListener("click", decrementProduct);
-cartPlusBtn.addEventListener("click", incrementProduct);
+// cartMinusBtn.addEventListener("click", decrementProduct);
+// cartPlusBtn.addEventListener("click", incrementProduct);
 
-function decrementProduct() {
-  if (productCount > 1) {
-    productCount--;
-  }
-  productCountDom.innerHTML = `${productCount}`;
-}
+// function decrementProduct() {
+//   if (productCount > 1) {
+//     productCount--;
+//   }
+//   productCountDom.innerHTML = `${productCount}`;
+// }
 
-function incrementProduct() {
-  if (productCount < 10) {
-    productCount++;
-  }
-  productCountDom.innerHTML = `${productCount}`;
-}
+// function incrementProduct() {
+//   if (productCount < 10) {
+//     productCount++;
+//   }
+//   productCountDom.innerHTML = `${productCount}`;
+// }

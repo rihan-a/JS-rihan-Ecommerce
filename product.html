@@ -17,7 +17,7 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
     />
-    <title>rihan store | Shop</title>
+    <title>rihan store | Product</title>
   </head>
 
   <body>
@@ -42,7 +42,9 @@
         <ul id="navbar">
           <li><a href="contact.html">Contact</a></li>
 
-          <li id="not-signed-in"><a href="login.html">Login</a></li>
+          <li id="not-signed-in">
+            <a href="login.html">Login</a>
+          </li>
 
           <li id="signed-in-user">
             <a href="#"> Logout</a>
@@ -55,32 +57,11 @@
       </div>
     </section>
 
-    <!---- CART SIDEBAR----->
+    <!-- Product Section -->
 
-    <!-- Shop section -->
-
-    <section id="product1">
-      <h3>Shop</h3>
-      <div class="pro-container">
-        <!-- Loading spinner -->
-        <div class="loading-page">
-          <div class="lds-spinner">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-        </div>
-
-        <!-- products will be injected by JS -->
+    <section class="product-page-container">
+      <div class="single-product">
+        <!-- Product HTML Injected by Javascript  -->
       </div>
     </section>
 
@@ -94,7 +75,7 @@
         <input
           type="email"
           placeholder="EMAIL ADDRESS
-              "
+          "
         />
         <button>SUBSCRIBE →</button>
       </div>
@@ -136,7 +117,6 @@
       </div>
     </section>
 
-    <script src="./assets/script/script.js"></script>
-    <script src="./assets/script/shop.js"></script>
+    <script src="./assets/script/product.js"></script>
   </body>
 </html>

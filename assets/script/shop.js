@@ -1,5 +1,9 @@
 let productsContainer = document.querySelector(".pro-container");
 let loading = document.querySelector(".loading-page");
+let cartsidebar = document.querySelector(".cart-products-container");
+let cartCount = document.querySelector(".cart-btn");
+
+productPage = document.querySelector(".product-page-img-container");
 
 // function getProducts(data) {
 //   let url = "https://rihanbackgrounds.myshopify.com/products.json";
@@ -21,6 +25,7 @@ async function getProducts() {
     console.log(error);
   }
 }
+
 getProducts();
 
 // Function to inject the fetched products into html
@@ -31,8 +36,8 @@ async function printProducts() {
 
   if (items.products) {
     items.products.forEach(function (item) {
-      productsContainer.innerHTML += `<div class="pro">
-      <div class="img-container">
+      productsContainer.innerHTML += `<div class="pro"  >
+      <div class="img-container" onclick="openProduct(${item.id})">
         <img src="${item.images[0].src}" alt="${item.title}"/>
       </div> 
       <div class="desc">
@@ -58,61 +63,60 @@ async function printProducts() {
 }
 printProducts();
 
-// Intiate cart array
-let cart = [];
+// A function to open a product page and saves that product to local storage
+async function openProduct(theID) {
+  //fetched products from shopify
+  let productsJSON = await getProducts();
+
+  productsJSON.products.forEach(function (item) {
+    if (item.id === theID) {
+      let clickedProduct = item;
+      localStorage.setItem("productPage", JSON.stringify(clickedProduct));
+    }
+    setTimeout(() => {
+      window.location = "product.html";
+    }, 200);
+  });
+  printProductPage();
+}
+
+// Intiate an empty cart array
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 // Function to check which product is being added to the cart and push to the cart array
 async function addToCart(theID) {
+  //fetched products from shopify
   let productsJSON = await getProducts();
 
   productsJSON.products.forEach(function (item) {
     if (item.id === theID) {
       let clickedProduct = item;
       if (cart.some((item) => item.id === theID)) {
-        alert("Product is already in cart");
+        item.numberOfUnits++;
       } else {
         cart.push({
           ...clickedProduct,
           numberOfUnits: 1,
         });
-        console.log(cart);
       }
     }
+    localStorage.setItem("cart", JSON.stringify(cart));
   });
-  updateCart();
+  renderSubtotal();
 }
 
-// Function to update cart
-function updateCart() {
-  renderCartItems();
-  //renderSubtoal();
-}
+function renderSubtotal() {
+  let cartProductCount = 0;
+  let cartProducts = JSON.parse(localStorage.getItem("cart"));
+  let storageCartCount = localStorage.getItem("cartCount");
 
-let cartsidebar = document.querySelector(".cart-products");
-
-function renderCartItems() {
-  cartsidebar.innerHTML = ""; // clear cart
-  cart.forEach((item) => {
-    cartsidebar.innerHTML += `<div class="cart-pro">
-        <div class="img-container">
-          <img src="${item.images[0].src}" alt="${item.title}" />
-        </div>
-        <div class="cart-desc">
-          <span class="remove-pro">X</span>
-          <div class="pro-name">
-            <span class="pro-brand"> Stoneware</span>
-            <h4>${item.title}</h4>
-            <span class="pro-minus">-</span>
-            <span class="pro-count">${item.numberOfUnits}</span>
-            <span class="pro-plus">+</span>
-              </div>
-              <div class="pro-price">
-            <h5>EGP ${item.variants[0].price}</h5>
-          </div>
-        </div>
-    </div>`;
+  cartProducts.forEach((item) => {
+    cartProductCount += item.numberOfUnits;
   });
+
+  cartCount.innerHTML = `Cart(${storageCartCount})`;
 }
+renderSubtotal();
 
 // Function to check if the user is logged in or not
 function checkLogedInUser() {
@@ -121,5 +125,3 @@ function checkLogedInUser() {
     window.location = "login.html";
   }
 }
-
-// <!-- product in cart -->

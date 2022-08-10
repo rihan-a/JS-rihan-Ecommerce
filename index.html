@@ -45,62 +45,10 @@
             <a href="#/"> Logout</a>
           </li>
           <li>
-            <a href="#/" class="cart-btn">Cart(0)</a>
+            <a href="cart.html" class="cart-btn">Cart(0)</a>
           </li>
         </ul>
       </div>
-
-      <!----------------- Cart Sidebar ---------------->
-      <aside class="cart-sidebar" value="closed">
-        <h3>Cart</h3>
-        <!-- product in cart -->
-        <div class="cart-pro">
-          <div class="img-container">
-            <img src="./assets/imgs/Mug-s.jpg" alt="" />
-          </div>
-          <div class="cart-desc">
-            <span class="remove-pro">X</span>
-            <div class="pro-name">
-              <span class="pro-brand"> Stoneware</span>
-              <h4>Ecru Mug</h4>
-              <span class="pro-minus">-</span>
-              <span class="pro-count">1</span>
-              <span class="pro-plus">+</span>
-            </div>
-            <div class="pro-price">
-              <h5>€15,00</h5>
-            </div>
-          </div>
-        </div>
-        <!-- product in cart -->
-        <div class="cart-pro">
-          <div class="img-container">
-            <img src="./assets/imgs/small-plate-s.jpg" alt="" />
-          </div>
-          <div class="cart-desc">
-            <span class="remove-pro">X</span>
-            <div class="pro-name">
-              <span class="pro-brand"> Stoneware</span>
-              <h4>Ecru Plate S 10cm</h4>
-              <span class="pro-minus">-</span>
-              <span class="pro-count">1</span>
-              <span class="pro-plus">+</span>
-            </div>
-            <div class="pro-price">
-              <h5>€15,00</h5>
-            </div>
-          </div>
-        </div>
-
-        <!-- subtoal / checkout -->
-        <div class="checkout">
-          <div class="cart-subtotal">
-            <h5>Subtotal</h5>
-            <h5>€30,00</h5>
-          </div>
-          <input type="submit" value="CHECK OUT" />
-        </div>
-      </aside>
     </section>
 
     <!-- Hero section -->
@@ -114,7 +62,9 @@
             designs are handmade & one of a kind, made with love by local
             artisans.
           </p>
-          <button>Shop Now</button>
+          <a href="shop.html">
+            <button>Shop Now</button>
+          </a>
         </div>
         <div class="hero-img">
           <img src="./assets/imgs/hero-img01.jpg" alt="" />
@@ -251,16 +201,16 @@
 
     <section class="delivery">
       <div>
-        <h5>FREE SHIPPING FROM € 60</h5>
+        <h5>FREE SHIPPING FROM EGP 300</h5>
       </div>
       <div>
         <h5>PICK-UP IN STORE FREE</h5>
       </div>
       <div>
-        <h5>DELIVERY IN 1 HOUR IN BERLIN</h5>
+        <h5>DELIVERY IN 1 HOUR IN CAIRO</h5>
       </div>
       <div>
-        <h5>FREE RETURNS IN GERMANY</h5>
+        <h5>FREE RETURNS IN EGYPT</h5>
       </div>
     </section>
 
@@ -316,6 +266,8 @@
       </div>
     </section>
 
+    <script src="./assets/script/shop.js"></script>
     <script src="./assets/script/script.js"></script>
+    <script src="./assets/script/cart.js"></script>
   </body>
 </html>

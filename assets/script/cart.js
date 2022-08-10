@@ -74,8 +74,8 @@ function renderSubtotal() {
     cartProductCount += item.numberOfUnits;
   });
   cartSubtotal.innerHTML = `EGP ${subTotal}`;
-  cartCount.innerHTML = `Cart(${cartProductCount})`;
   localStorage.setItem("cartCount", cartProductCount);
+  cartCount.innerHTML = `Cart(${cartProductCount})`;
 }
 
 // function to remove items from cart

@@ -257,7 +257,7 @@ body {
 #product1 .pro-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -867,10 +867,31 @@ body {
 
 /* -------------------------------  Cart Page -------------------------------- */
 
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: var(--general-border);
+}
+.cart-header a {
+  display: inline-block;
+  margin-right: 40px;
+  width: 120px;
+  padding: 5px;
+  text-align: center;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border: solid 1px black;
+}
+
+.cart-header a:hover {
+  background-color: black;
+  color: white;
+}
 .cart-section h3 {
   padding: 30px 40px;
   width: 100%;
-  border-bottom: var(--general-border);
 }
 
 .cart-section .cart-products-container {
@@ -1023,6 +1044,41 @@ body {
 }
 
 @media (max-width: 799px) {
+  .cart-products-container .img-container {
+    width: 45%;
+    height: unset;
+    overflow: hidden;
+    border-right: var(--general-border);
+  }
+
+  .cart-products-container .cart-desc {
+    display: block;
+    width: 55%;
+    margin: 7px;
+  }
+
+  .cart-products-container .pro-name h4 {
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+
+  .cart-products-container .pro-price h5 {
+    margin-top: 5px;
+    width: unset;
+  }
+
+  .cart-desc .remove-pro {
+    top: unset;
+    bottom: 7px;
+    right: 5px;
+  }
+
+  .cart-header a {
+    margin-right: 20px;
+    width: 150px;
+    padding: 5px;
+  }
+
   .header-hamburger {
     display: block;
   }
@@ -1110,7 +1166,7 @@ body {
 
 .single-product .img-container {
   width: 50%;
-  height: 600px;
+  /* height: 600px; */
   border-right: var(--general-border);
   overflow: hidden;
 }
@@ -1122,6 +1178,7 @@ body {
 
 .single-product .desc {
   padding: 0 30px;
+  width: 80%;
 }
 .single-product .desc h4 {
   font-size: 1.6rem;
@@ -1137,13 +1194,12 @@ body {
 }
 
 .single-product .product-info {
-  margin-top: 70px;
-  font-size: 0.4rem;
+  margin-top: 50px;
   color: #4b4b4b;
 }
 
 .single-product .product-info p {
-  font-size: 0.9rem;
+  font-size: 0.7rem;
 }
 
 .single-product .add-to-cart {
@@ -1164,4 +1220,24 @@ body {
   background-color: black;
   color: white;
   border-left: solid 1px white;
+}
+
+@media (max-width: 700px) {
+  .single-product {
+    flex-direction: column;
+  }
+
+  .single-product .img-container {
+    width: 100%;
+    border-bottom: var(--general-border);
+  }
+
+  .single-product .desc {
+    padding: 15px;
+    width: 100%;
+  }
+
+  .single-product .product-info p {
+    font-size: 0.9rem;
+  }
 }

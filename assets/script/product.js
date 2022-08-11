@@ -38,6 +38,9 @@ printProductPage();
 
 function updateCartCount() {
   let cartProductCount = localStorage.getItem("cartCount");
-  console.log(cartProductCount);
-  cartCount.innerHTML = `Cart(${cartProductCount})`;
+  if (localStorage.getItem("cartCount")) {
+    cartCount.innerHTML = `Cart(${cartProductCount})`;
+  } else {
+    cartCount.innerHTML = `Cart(0)`;
+  }
 }

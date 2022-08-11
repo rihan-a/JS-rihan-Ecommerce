@@ -2,8 +2,7 @@ let productsContainer = document.querySelector(".pro-container");
 let loading = document.querySelector(".loading-page");
 let cartsidebar = document.querySelector(".cart-products-container");
 let cartCount = document.querySelector(".cart-btn");
-
-productPage = document.querySelector(".product-page-img-container");
+let productPage = document.querySelector(".product-page-img-container");
 
 // function getProducts(data) {
 //   let url = "https://rihanbackgrounds.myshopify.com/products.json";
@@ -65,8 +64,7 @@ printProducts();
 
 // A function to open a product page and saves that product to local storage
 async function openProduct(theID) {
-  //fetched products from shopify
-  let productsJSON = await getProducts();
+  let productsJSON = await getProducts(); // Products JSON
 
   productsJSON.products.forEach(function (item) {
     if (item.id === theID) {
@@ -81,18 +79,17 @@ async function openProduct(theID) {
 }
 
 // Intiate an empty cart array
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let cart = [];
 
 // Function to check which product is being added to the cart and push to the cart array
 async function addToCart(theID) {
-  //fetched products from shopify
-  let productsJSON = await getProducts();
+  let productsJSON = await getProducts(); // Products JSON
 
   productsJSON.products.forEach(function (item) {
     if (item.id === theID) {
       let clickedProduct = item;
       if (cart.some((item) => item.id === theID)) {
-        item.numberOfUnits++;
+        alert("Product already in the cart.");
       } else {
         cart.push({
           ...clickedProduct,
@@ -100,21 +97,20 @@ async function addToCart(theID) {
         });
       }
     }
-    localStorage.setItem("cart", JSON.stringify(cart));
   });
+  localStorage.setItem("cart", JSON.stringify(cart));
+
   renderSubtotal();
 }
 
 function renderSubtotal() {
   let cartProductCount = 0;
   let cartProducts = JSON.parse(localStorage.getItem("cart"));
-  let storageCartCount = localStorage.getItem("cartCount");
 
   cartProducts.forEach((item) => {
     cartProductCount += item.numberOfUnits;
   });
-
-  cartCount.innerHTML = `Cart(${storageCartCount})`;
+  cartCount.innerHTML = `Cart(${cartProductCount})`;
 }
 renderSubtotal();
 

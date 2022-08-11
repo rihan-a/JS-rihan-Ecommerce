@@ -34,7 +34,18 @@ function renderCart() {
 </div>
 `;
   });
+  cartCount.innerHTML = `Cart(${localStorage.getItem("cartCount")})`;
   renderSubtotal();
+}
+
+function clearCart() {
+  let emptyCart = [];
+  cartContainer.innerHTML = "";
+  cartSubtotal.innerHTML = "EGP 00,00";
+  cartCount.innerHTML = `Cart(0)`;
+
+  localStorage.setItem("cartCount", 0);
+  localStorage.setItem("cart", JSON.stringify(emptyCart));
 }
 
 renderCart();
@@ -42,7 +53,9 @@ renderCart();
 //change number of units
 
 function changeNumberOfUnits(action, id) {
-  cartProducts = cartProducts.map((item) => {
+  let cartProducts = JSON.parse(localStorage.getItem("cart"));
+
+  let updatedCartProducts = cartProducts.map((item) => {
     let updatedNumberOfUnits = item.numberOfUnits;
 
     if (item.id === id) {
@@ -57,10 +70,11 @@ function changeNumberOfUnits(action, id) {
       numberOfUnits: updatedNumberOfUnits,
     };
   });
+  localStorage.setItem("cart", JSON.stringify(updatedCartProducts));
   renderSubtotal();
   cartContainer.innerHTML = "";
   renderCart();
-  localStorage.setItem("cart", JSON.stringify(cartProducts));
+  console.log("rihan test +");
 }
 
 //render the subtoal value and update the cart product count
@@ -68,12 +82,13 @@ function changeNumberOfUnits(action, id) {
 function renderSubtotal() {
   let cartProductCount = 0;
   let subTotal = 0;
-
+  let cartProducts = JSON.parse(localStorage.getItem("cart"));
   cartProducts.forEach((item) => {
     subTotal += item.variants[0].price * item.numberOfUnits;
     cartProductCount += item.numberOfUnits;
   });
   cartSubtotal.innerHTML = `EGP ${subTotal}`;
+
   localStorage.setItem("cartCount", cartProductCount);
   cartCount.innerHTML = `Cart(${cartProductCount})`;
 }
@@ -81,11 +96,16 @@ function renderSubtotal() {
 // function to remove items from cart
 
 function removeItem(id) {
-  console.log("rihan");
-  updatedCartProducts = cartProducts.filter((item) => item.id !== id);
+  let cartProducts = JSON.parse(localStorage.getItem("cart"));
+
+  updatedCartProducts = cartProducts.filter((item) => {
+    item.id != id;
+  });
+
   console.log(updatedCartProducts);
 
   localStorage.setItem("cart", JSON.stringify(updatedCartProducts));
-  cartContainer.innerHTML = "";
+  //cartContainer.innerHTML = "";
+  console.log("test remove");
   renderCart();
 }

@@ -25,6 +25,7 @@ function loginUser(e) {
       }, 1000);
 
       signedUser.style.display = "flex";
+
       notSignedUser.style.display = "none";
     } else {
       notSignedUser.style.display = "flex";

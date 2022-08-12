@@ -192,6 +192,7 @@ body {
   background-color: rgba(255, 255, 255, 0.527);
   width: 180px;
   height: 40px;
+  color: black;
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
@@ -636,6 +637,8 @@ body {
   background-color: unset;
   margin-left: 20px;
   font-size: 1rem;
+  color: black;
+  border-radius: 0;
 }
 
 .subscribe input:focus {
@@ -813,6 +816,7 @@ body {
   background-color: unset;
   margin-left: 20px;
   font-size: 1rem;
+  border-radius: 0;
 }
 .login-form > input {
   border-bottom: var(--general-border);
@@ -827,12 +831,16 @@ body {
   cursor: pointer;
   text-transform: uppercase;
   text-decoration: none;
+  color: black;
+  border-radius: 0;
 }
 
 .sign-in input {
   padding: 5px;
   border: solid 1px black;
   transition: all 0.2s ease-in;
+  border-radius: 0;
+  color: black;
 }
 
 .sign-in input:hover,
@@ -1036,11 +1044,16 @@ body {
   font-size: 1.1rem;
   font-weight: 600;
   transition: all 0.1s ease-in;
+  color: black;
+  border-radius: 0;
 }
 
 .checkout input:hover {
   background-color: black;
   color: white;
+}
+.cart-btn-phone {
+  display: none;
 }
 
 @media (max-width: 799px) {
@@ -1081,6 +1094,8 @@ body {
 
   .header-hamburger {
     display: block;
+    width: 30%;
+    height: 20px;
   }
 
   #header {
@@ -1106,7 +1121,20 @@ body {
   }
 
   .header-logo {
-    width: 65%;
+    width: 30%;
+    text-align: center;
+
+    height: 20px;
+  }
+
+  .cart-btn-phone {
+    display: block;
+    color: black;
+    text-decoration: none;
+    width: 30%;
+    font-size: 1.2rem;
+    text-align: end;
+    height: 20px;
   }
 
   .header-left {

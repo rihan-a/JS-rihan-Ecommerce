@@ -1,5 +1,6 @@
 productContainer = document.querySelector(".single-product");
 let cartCount = document.querySelector(".cart-btn");
+let cartCount2 = document.querySelector(".cart-btn2");
 
 function printProductPage() {
   let productObj = JSON.parse(localStorage.getItem("productPage"));
@@ -40,6 +41,7 @@ function updateCartCount() {
   let cartProductCount = localStorage.getItem("cartCount");
   if (localStorage.getItem("cartCount")) {
     cartCount.innerHTML = `Cart(${cartProductCount})`;
+    cartCount2.innerHTML = `Cart(${cartProductCount})`;
   } else {
     cartCount.innerHTML = `Cart(0)`;
   }

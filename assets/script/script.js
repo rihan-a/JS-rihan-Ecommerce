@@ -52,25 +52,52 @@ function logOut() {
   }, 1000);
 }
 
-// -----  Cart product count ( - / + )  --------
-// let cartMinusBtn = document.querySelector(".pro-minus");
-// let cartPlusBtn = document.querySelector(".pro-plus");
-// let productCountDom = document.querySelector(".pro-count");
-// let productCount = 1;
+let featuredProductsContainer = document.querySelector(
+  ".featured-pro-container"
+);
 
-// cartMinusBtn.addEventListener("click", decrementProduct);
-// cartPlusBtn.addEventListener("click", incrementProduct);
+// Async Function to fetch the products json from shopify
+async function getProducts() {
+  let url = "https://rihanbackgrounds.myshopify.com/products.json";
+  try {
+    let res = await fetch(url);
+    return await res.json();
+  } catch (error) {
+    console.log(error);
+  }
+}
 
-// function decrementProduct() {
-//   if (productCount > 1) {
-//     productCount--;
-//   }
-//   productCountDom.innerHTML = `${productCount}`;
-// }
+getProducts();
 
-// function incrementProduct() {
-//   if (productCount < 10) {
-//     productCount++;
-//   }
-//   productCountDom.innerHTML = `${productCount}`;
-// }
+// Function to inject featured products into the homepage
+async function printFeaturedProducts() {
+  let allProducts = await getProducts();
+
+  if (allProducts.products) {
+    for (let i = 0; i < 4; i++) {
+      featuredProductsContainer.innerHTML += `<div class="pro"  >
+      <div class="img-container" onclick="openProduct(${allProducts.products[i].id})">
+        <img src="${allProducts.products[i].images[0].src}" alt="${allProducts.products[i].title}"/>
+      </div> 
+      <div class="desc">
+        <span class="desc-brand">Homewares</span>
+        <h4>${allProducts.products[i].title}</h4>
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="desc-price">
+          <h5>EGP ${allProducts.products[i].variants[0].price}</h5>
+          <a id="${allProducts.products[i].id}" class="add-to-cart" onclick="addToCart(${allProducts.products[i].id})" > + </a>
+        </div>
+      </div>
+      </div>`;
+    }
+  } else {
+    alert("no data available.");
+  }
+}
+printFeaturedProducts();

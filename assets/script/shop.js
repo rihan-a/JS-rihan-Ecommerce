@@ -2,6 +2,8 @@ let productsContainer = document.querySelector(".pro-container");
 let loading = document.querySelector(".loading-page");
 let cartsidebar = document.querySelector(".cart-products-container");
 let cartCount = document.querySelector(".cart-btn");
+let cartCount2 = document.querySelector(".cart-btn2");
+
 let productPage = document.querySelector(".product-page-img-container");
 
 // function getProducts(data) {
@@ -15,7 +17,7 @@ let productPage = document.querySelector(".product-page-img-container");
 
 // Async Function to fetch the products json from shopify
 async function getProducts() {
-  loading.style.display = "flex";
+  // loading.style.display = "flex";
   let url = "https://rihanbackgrounds.myshopify.com/products.json";
   try {
     let res = await fetch(url);
@@ -27,13 +29,12 @@ async function getProducts() {
 
 getProducts();
 
-// Function to inject the fetched products into html
+// Function to inject products into the shop page
+
 async function printProducts() {
   let items = await getProducts();
-
-  loading.style.display = "none";
-
   if (items.products) {
+    loading.style.display = "none";
     items.products.forEach(function (item) {
       productsContainer.innerHTML += `<div class="pro"  >
       <div class="img-container" onclick="openProduct(${item.id})">
@@ -82,7 +83,9 @@ async function openProduct(theID) {
 let cart = [];
 
 // Function to check which product is being added to the cart and push to the cart array
-async function addToCart(theID) {
+window.addToCart = async function addToCart(theID) {
+  console.log("hi rihan");
+
   let productsJSON = await getProducts(); // Products JSON
 
   productsJSON.products.forEach(function (item) {
@@ -101,7 +104,11 @@ async function addToCart(theID) {
   localStorage.setItem("cart", JSON.stringify(cart));
 
   renderSubtotal();
-}
+};
+
+// window.fn1 = function fn1() {
+//   alert("external fn clicked");
+// };
 
 function renderSubtotal() {
   let cartProductCount = 0;
@@ -111,6 +118,7 @@ function renderSubtotal() {
     cartProductCount += item.numberOfUnits;
   });
   cartCount.innerHTML = `Cart(${cartProductCount})`;
+  cartCount2.innerHTML = `Cart(${cartProductCount})`;
 }
 renderSubtotal();
 

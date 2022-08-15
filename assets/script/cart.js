@@ -1,6 +1,7 @@
 let cartContainer = document.querySelector(".cart-products-container");
 let cartSubtotal = document.querySelector(".cart-total-amout");
 let cartCount = document.querySelector(".cart-btn");
+let cartCount2 = document.querySelector(".cart-btn2");
 
 function renderCart() {
   let cartProducts = JSON.parse(localStorage.getItem("cart"));
@@ -35,6 +36,7 @@ function renderCart() {
 `;
   });
   cartCount.innerHTML = `Cart(${localStorage.getItem("cartCount")})`;
+  cartCount2.innerHTML = `Cart(${localStorage.getItem("cartCount")})`;
   renderSubtotal();
 }
 
@@ -91,6 +93,7 @@ function renderSubtotal() {
 
   localStorage.setItem("cartCount", cartProductCount);
   cartCount.innerHTML = `Cart(${cartProductCount})`;
+  cartCount2.innerHTML = `Cart(${cartProductCount})`;
 }
 
 // function to remove items from cart

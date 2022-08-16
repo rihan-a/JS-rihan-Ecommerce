@@ -6,15 +6,6 @@ let cartCount2 = document.querySelector(".cart-btn2");
 
 let productPage = document.querySelector(".product-page-img-container");
 
-// function getProducts(data) {
-//   let url = "https://rihanbackgrounds.myshopify.com/products.json";
-//   fetch(url)
-//     .then((res) => res.json())
-//     .then((data) => printProducts(data))
-//     .then((tdata) => cartProducts(tdata))
-//     .catch((err) => console.log(err));
-// }
-
 // Async Function to fetch the products json from shopify
 async function getProducts() {
   // loading.style.display = "flex";
@@ -106,9 +97,6 @@ window.addToCart = async function addToCart(theID) {
   renderSubtotal();
 };
 
-// window.fn1 = function fn1() {
-//   alert("external fn clicked");
-// };
 
 function renderSubtotal() {
   let cartProductCount = 0;

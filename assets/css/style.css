@@ -1141,6 +1141,35 @@ body {
   display: none;
 }
 
+/*----  Tablet styling -----*/
+@media (max-width: 1000px) {
+  .cart-products-container .pro-name h4 {
+    margin: 10px 0;
+    font-size: 1rem;
+  }
+  .cart-products-container .cart-desc {
+    height: 150px;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 50px 0 30px;
+    position: relative;
+  }
+
+  .cart-products-container .img-container {
+    width: 45%;
+    height: 280px;
+    overflow: hidden;
+    border-right: var(--general-border);
+  }
+
+  .cart-products-container img {
+    width: 100%;
+    vertical-align: bottom;
+  }
+}
+
 @media (max-width: 799px) {
   .cart-products-container .img-container {
     width: 45%;
@@ -1268,15 +1297,14 @@ body {
     align-items: center;
   }
 }
-/* ---------------------------- Product Page ---------------------------- */
 
+/* ---------------------------- Product Page ---------------------------- */
 .single-product {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 .single-product .img-container {
   width: 50%;
   /* height: 600px; */
@@ -1335,6 +1363,56 @@ body {
   border-left: solid 1px white;
 }
 
+/* ----Tablet Styling -------- */
+@media (max-width: 1000px) {
+  .single-product .desc h4 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .single-product .desc p {
+    font-size: 12px;
+    margin: 0;
+  }
+
+  .single-product .add-to-cart {
+    border: solid 1px black;
+    padding: 10px 0 10px 10px;
+  }
+
+  .single-product .product-info {
+    margin-top: 20px;
+  }
+
+  .single-product .img-container {
+    width: 80%;
+    /* height: 600px; */
+  }
+
+  .single-product .img-container img {
+    width: 100%;
+    vertical-align: bottom;
+  }
+
+  .single-product .desc {
+    padding: 0 30px;
+    margin: 10px 0;
+  }
+
+  .single-product .desc h4 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  .single-product .desc .star {
+    margin-bottom: 10px;
+  }
+  .single-product .desc-price h5 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+  }
+}
+
+/* ---- Phone Styling ------- */
 @media (max-width: 700px) {
   .single-product {
     flex-direction: column;

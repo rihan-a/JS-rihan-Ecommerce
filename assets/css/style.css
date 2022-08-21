@@ -141,17 +141,31 @@ body {
   text-decoration: none;
 }
 
+/* Tablet styling */
+@media (max-width: 900px) {
+  .header-left {
+    width: 35%;
+  }
+
+  .header-right {
+    width: 35%;
+  }
+  .logo {
+    width: 80px;
+    overflow: hidden;
+  }
+}
+
 /* --- Header end --- */
 
 /* --------------------------------  HOME PAGE  ----------------------------------------- */
 
-/* --- Hero start --- */
+/* ----------------- Hero start --------------- */
 
 #hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* height: 800px; */
   border-bottom: var(--general-border);
 }
 
@@ -203,6 +217,50 @@ body {
   background-color: white;
 }
 
+/* Tablet styling */
+@media (max-width: 1000px) {
+  #hero .hero-right {
+    padding-top: 20px;
+  }
+
+  #hero .hero-left {
+    padding-top: 20px;
+  }
+
+  #hero .hero-img {
+    margin: -20px auto;
+    padding: 20px;
+  }
+
+  #hero .hero-left .titles {
+    padding: 70px;
+  }
+  #hero .hero-left .titles p {
+    font-size: 20px;
+  }
+
+  #hero {
+    flex-direction: column;
+  }
+
+  #hero .hero-right {
+    padding-top: 30px;
+    border-bottom: var(--general-border);
+    width: 100%;
+    height: 100vw;
+    border-left: unset;
+  }
+
+  #hero .hero-left {
+    padding-top: 30px;
+    width: 100%;
+    height: 100vw;
+    position: relative;
+    border-bottom: var(--general-border);
+  }
+}
+
+/* Mobile styling */
 @media (max-width: 700px) {
   #hero {
     flex-direction: column;
@@ -452,7 +510,20 @@ body {
 }
 
 /* ------ END LOADING SPINNER ------- */
+/*------- Tablet styling -------- */
+@media (max-width: 1000px) {
+  #product1 .featured-title h2 {
+    font-size: 2rem;
+  }
+  #product1 .pro {
+    width: 50%;
+  }
 
+  #product1 .pro .img-container {
+    height: 50vw;
+  }
+}
+/*------ Phone styling ----- */
 @media (max-width: 700px) {
   #product1 .featured-title {
     padding: 10px;
@@ -522,7 +593,6 @@ body {
 .services-img {
   width: 50%;
   border-left: var(--general-border);
-  /* overflow: hidden; */
 }
 
 .services-img img {
@@ -546,9 +616,10 @@ body {
   margin: 30px;
 }
 
-@media (max-width: 880px) {
+@media (max-width: 1000px) {
   .services-desc h3 {
     margin: 7px;
+    font-size: 1.5rem;
   }
 }
 
@@ -754,6 +825,12 @@ body {
   text-align: center;
   font-size: 0.7rem;
   font-weight: 200;
+}
+
+@media (max-width: 1000px) {
+  .footer-logo img {
+    width: 80px;
+  }
 }
 
 @media (max-width: 700px) {
@@ -1191,7 +1268,7 @@ body {
     align-items: center;
   }
 }
-/* ------------- Product Page ---------------- */
+/* ---------------------------- Product Page ---------------------------- */
 
 .single-product {
   width: 100%;

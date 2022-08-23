@@ -371,6 +371,11 @@ body {
   height: 40px;
 }
 
+#product1 .pro .desc h4:hover {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
 #product1 .pro .desc .star {
   padding: 10px 0;
   font-size: 13px;
@@ -1431,4 +1436,20 @@ body {
   .single-product .product-info p {
     font-size: 0.9rem;
   }
+}
+
+/* -----------------------  About Page ---------------------------- */
+
+#about h3 {
+  padding: 30px 40px;
+  width: 100%;
+  border-bottom: var(--general-border);
+}
+
+/* -----------------------  Contact Page ---------------------------- */
+
+#contact h3 {
+  padding: 30px 40px;
+  width: 100%;
+  border-bottom: var(--general-border);
 }

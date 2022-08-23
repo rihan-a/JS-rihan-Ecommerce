@@ -38,14 +38,14 @@
         <img src="./assets/imgs/rihan-logo.png" class="logo" alt=""
       /></a>
 
-      <a href="cart.html" class="cart-btn-phone">Cart(0)</a>
+      <a href="cart.html" class="cart-btn-phone cart-btn">Cart(0)</a>
 
       <div class="header-right">
         <ul id="navbar">
           <li><a href="contact.html">Contact</a></li>
 
-          <li class="active" id="not-signed-in">
-            <a href="login.html">Login</a>
+          <li id="not-signed-in">
+            <a href="login.html" class="active">Login</a>
           </li>
 
           <li id="signed-in-user">
@@ -53,7 +53,7 @@
           </li>
 
           <li>
-            <a href="cart.html">Cart(0)</a>
+            <a href="cart.html" class="cart-btn2">Cart(0)</a>
           </li>
         </ul>
       </div>
@@ -131,6 +131,7 @@
       </div>
     </section>
 
-    <script src="./assets/script/login.js"></script>
+    <script type="module" src="./assets/scripts/login.js"></script>
+    <script type="module" src="./assets/scripts/global.js"></script>
   </body>
 </html>

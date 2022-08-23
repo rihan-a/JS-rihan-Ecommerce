@@ -1,15 +1,15 @@
-// User Login
-
+// User Login ------------->>
+// Variables
 let userEmail = document.querySelector("#email");
 let userPassword = document.querySelector("#password");
 let loginBtn = document.querySelector("#login-btn");
 let notSignedUser = document.querySelector("#not-signed-in");
 let signedUser = document.querySelector("#signed-in-user");
-
-loginBtn.addEventListener("click", loginUser);
-
 let getUserEmail = localStorage.getItem("email");
 let getPassword = localStorage.getItem("password");
+
+updateCartCount();
+loginBtn.addEventListener("click", loginUser);
 
 function loginUser(e) {
   e.preventDefault();

@@ -1,3 +1,5 @@
+// Imports
+import { addToCart } from "./addToCart.js";
 // Variables
 let productContainer = document.querySelector(".single-product");
 let cartCount = document.querySelector(".cart-btn");
@@ -20,7 +22,7 @@ export function printProductPage() {
   </div>
   <div class="desc-price">
     <h5>EGP ${productObj.variants[0].price}</h5>
-    <a id="${productObj.id}" class="add-to-cart" onclick="addToCart(${productObj.id})"> Add to Cart <span> + </span> </a>
+    <a id="${productObj.id}" class="add-to-cart" productID="${productObj.id}"> Add to Cart <span> + </span> </a>
   </div>
 
 <div class="product-info">
@@ -31,3 +33,13 @@ ${productObj.body_html}
 }
 
 printProductPage();
+
+productContainer.addEventListener("click", addProductToCart);
+
+//Function to target the clicked product and calls the add to cart function
+function addProductToCart(e) {
+  if (e.target.classList.contains("add-to-cart")) {
+    let id = e.target.getAttribute("productID");
+    addToCart(id);
+  }
+}

@@ -425,6 +425,17 @@ body {
   filter: brightness(0.9);
 }
 
+.pro .added-to-cart {
+  border: solid 1px black;
+  padding: 6px;
+  display: none;
+}
+.pro .add-to-cart-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* ------ START LOADING SPINNER ------- */
 
 .loading-page {

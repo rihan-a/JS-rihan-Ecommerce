@@ -8,7 +8,6 @@ let signedUser = document.querySelector("#signed-in-user");
 let getUserEmail = localStorage.getItem("email");
 let getPassword = localStorage.getItem("password");
 
-updateCartCount();
 loginBtn.addEventListener("click", loginUser);
 
 function loginUser(e) {

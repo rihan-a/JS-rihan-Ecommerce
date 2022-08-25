@@ -122,7 +122,7 @@ function changeNumberOfUnits(action, id) {
 function clearCart() {
   let emptyCart = [];
   cartContainer.innerHTML = "";
-  cartSubtotal.innerHTML = "EGP 00,00";
+  cartSubtotal.innerHTML = "EGP 0";
   cartCount.innerHTML = `Cart(0)`;
   localStorage.setItem("cartCount", 0);
   localStorage.setItem("cart", JSON.stringify(emptyCart));

@@ -9,10 +9,13 @@ let hamburgerMenu = document.querySelector(".header-hamburger");
 let menuLeft = document.querySelector(".header-left");
 let menuRight = document.querySelector(".header-right");
 
-hamburgerMenu.addEventListener("click", showHideMenu);
+hamburgerMenu.addEventListener("touchstart", showHideMenu, false);
+hamburgerMenu.addEventListener("touchmove", showHideMenu, false);
+hamburgerMenu.addEventListener("touchend", showHideMenu, false);
 
 // function to show/hide the hamburger menu on small screens
 function showHideMenu() {
+  console.log("btn clicked");
   if (hamburgerMenu.value == "opened") {
     menuLeft.style.display = "none";
     menuRight.style.display = "none";

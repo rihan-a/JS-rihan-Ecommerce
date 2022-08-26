@@ -9,9 +9,10 @@ let hamburgerMenu = document.querySelector(".header-hamburger");
 let menuLeft = document.querySelector(".header-left");
 let menuRight = document.querySelector(".header-right");
 
+// Testing the touch events to fix the links bug on IOS
 hamburgerMenu.addEventListener("touchstart", showHideMenu, false);
-hamburgerMenu.addEventListener("touchmove", showHideMenu, false);
-hamburgerMenu.addEventListener("touchend", showHideMenu, false);
+// hamburgerMenu.addEventListener("touchmove", showHideMenu, false);
+// hamburgerMenu.addEventListener("touchend", showHideMenu, false);
 
 // function to show/hide the hamburger menu on small screens
 function showHideMenu() {

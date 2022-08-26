@@ -1227,12 +1227,6 @@ body {
     padding: 5px;
   }
 
-  .header-hamburger {
-    display: block;
-    width: 30%;
-    height: 20px;
-  }
-
   #header {
     padding: 0 20px;
     position: sticky;
@@ -1296,6 +1290,13 @@ body {
     width: 75px;
   }
 
+  .header-hamburger {
+    display: inline-block;
+    width: 30%;
+    height: 20px;
+    cursor: pointer;
+    z-index: 99999;
+  }
   .header-hamburger i {
     text-decoration: none;
     color: black;

@@ -17,12 +17,12 @@ function showHideMenu() {
     menuLeft.style.display = "none";
     menuRight.style.display = "none";
     hamburgerMenu.value = "closed";
-    hamburgerMenu.innerHTML = `<i class="fi fi-bs-menu-burger"></i>`;
+    hamburgerMenu.innerHTML = `<a><i class="fi fi-bs-menu-burger"></i></a>`;
   } else {
     menuLeft.style.display = "unset";
     menuRight.style.display = "unset";
     hamburgerMenu.value = "opened";
-    hamburgerMenu.innerHTML = `<i class="fi fi-bs-cross"></i>`;
+    hamburgerMenu.innerHTML = `<a><i class="fi fi-bs-cross"></i></a>`;
   }
 }
 

@@ -1,26 +1,28 @@
 // Imports
-import { getProducts } from "./fetchProducts.js";
 import { openProduct } from "./openProduct.js";
-import { addToCart } from "./addToCart.js";
+import { changeNumberOfUnits } from "./changeNumber.js";
+import { updateCartCount } from "./updateCartCount.js";
+import { saveProductsToLocal } from "./fetchProducts.js";
 
 // Variables
 let productsContainer = document.querySelector(".pro-container");
 let loading = document.querySelector(".loading-page");
 
 // Function to inject products into the shop page
-async function printProducts() {
-  let items = await getProducts();
+saveProductsToLocal();
+let modifiedProductsList = JSON.parse(localStorage.getItem("allProducts"));
 
-  if (items.products) {
+function printProducts() {
+  modifiedProductsList = JSON.parse(localStorage.getItem("allProducts"));
+  if (modifiedProductsList) {
     loading.style.display = "none";
-    items.products.forEach(function (item) {
-      if (item.vendor === "rihan.") {
-        productsContainer.innerHTML += `<div class="pro" >
+    modifiedProductsList.forEach(function (item) {
+      productsContainer.innerHTML += `<div class="pro" >
       <div class ="img-container"   >
         <img src="${item.images[0].src}" alt="${item.title}"   class="product-img" productID="${item.id}"/>
       </div> 
       <div class="desc"  >
-        <span class="desc-brand"> Backdrops</span>
+        <span class="desc-brand"> Stoneware</span>
         <h4  class="product-title" productID="${item.id}"  >${item.title}</h4>
         <div class="star">
           <i class="fas fa-star"></i>
@@ -31,11 +33,14 @@ async function printProducts() {
         </div>
         <div class="desc-price">
           <h5>EGP ${item.variants[0].price}</h5>
-          <a id="${item.id}" class="add-to-cart" productID="${item.id}" > + </a>
+        </div>
+          <div class="add-to-cart-container">
+             <span class="pro-minus" > <a class="product-minus" productID="${item.id}"> - </a> </span>
+         <span class="pc${item.id} pro-count"> ${item.numberOfUnits} </span>
+        <span class="pro-plus"> <a class="product-plus" productID="${item.id}" > + </a> </span>
         </div>
       </div>
       </div>`;
-      }
     });
   } else {
     alert("no data available.");
@@ -44,7 +49,7 @@ async function printProducts() {
 printProducts();
 
 productsContainer.addEventListener("click", openProductPage);
-productsContainer.addEventListener("click", addProductToCart);
+//productsContainer.addEventListener("click", addProductToCart);
 
 //Function to target the clicked product and opens the product page
 function openProductPage(e) {
@@ -56,10 +61,29 @@ function openProductPage(e) {
     openProduct(id);
   }
 }
-//Function to target the clicked product and calls the add to cart function
-function addProductToCart(e) {
-  if (e.target.classList.contains("add-to-cart")) {
+
+// Changing number of products added to cart in the shop page
+
+productsContainer.addEventListener("click", changeProduct);
+
+//Function to change a product count added to cart
+function changeProduct(e) {
+  // plus btn pressed
+  if (e.target.classList.contains("product-plus")) {
     let id = e.target.getAttribute("productID");
-    addToCart(id);
+    //addToCart(id);
+    changeNumberOfUnits("plus", id);
+    productsContainer.innerHTML = "";
+    printProducts();
+    updateCartCount();
+
+    // minus btn pressed
+  } else if (e.target.classList.contains("product-minus")) {
+    let id = e.target.getAttribute("productID");
+    //removeFromCart(id);
+    changeNumberOfUnits("minus", id);
+    productsContainer.innerHTML = "";
+    printProducts();
+    updateCartCount();
   }
 }

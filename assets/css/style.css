@@ -297,12 +297,11 @@ body {
   }
 }
 
-/* --------------- Featured products ---------------  /  ----------------------------------- Shop Page ---------------------------------- */
+/* ---------- Featured products ----------  / -------------- Shop Page --------------------- */
 
 #product1 h3 {
   padding: 30px 40px;
   width: 100%;
-  border-bottom: var(--general-border);
 }
 
 #product1 .featured-title {
@@ -334,7 +333,7 @@ body {
   align-items: center;
   border-left: solid 0.5px black;
   border-right: solid 0.5px black;
-  border-bottom: var(--general-border);
+  border-top: var(--general-border);
 }
 
 #product1 .pro .img-container {
@@ -375,7 +374,7 @@ body {
 }
 
 #product1 .pro .desc .star {
-  padding: 10px 0;
+  padding: 5px 0;
   font-size: 13px;
   color: darkgray;
 }
@@ -432,6 +431,25 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 5px 0;
+  width: 25%;
+}
+
+.pro .pro-minus,
+.pro-plus {
+  border: solid 1px black;
+  display: inline-block;
+  padding: 0 4.5px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+
+.pro .pro-minus:hover,
+.pro .pro-plus:hover {
+  background-color: black;
+  color: white;
 }
 
 /* ------ START LOADING SPINNER ------- */
@@ -547,6 +565,11 @@ body {
   #product1 .pro .desc h4 {
     height: 50px;
     font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  #product1 .pro .desc {
+    align-items: center;
   }
 
   #product1 .featured-title h2 {
@@ -569,6 +592,29 @@ body {
     border-bottom: var(--general-border);
   }
 
+  #product1 .pro .desc .star {
+    padding: 0;
+    font-size: 13px;
+    color: darkgray;
+  }
+
+  .pro .star i:hover {
+    color: black;
+  }
+
+  #product1 .pro .desc-price {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  #product1 .pro .desc-price h5 {
+    text-align: center;
+    width: 100%;
+  }
+
   #product1 .pro img {
     position: absolute;
     top: 0;
@@ -583,6 +629,11 @@ body {
     padding: 5px 10px 10px 10px;
     border-top: unset;
   }
+
+  .pro .add-to-cart-container {
+    margin: 5px 0;
+    width: 65%;
+  }
 }
 
 /* --- Services section --- */
@@ -595,6 +646,7 @@ body {
 .services-title {
   padding: 50px;
   border-bottom: var(--general-border);
+  border-top: var(--general-border);
 }
 
 .services-container {

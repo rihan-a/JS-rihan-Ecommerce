@@ -1,3 +1,6 @@
+import { updateCartCount } from "./updateCartCount.js";
+import { saveProductsToLocal } from "./fetchProducts.js";
+
 // Varaibles
 let cartContainer = document.querySelector(".cart-products-container");
 let cartSubtotal = document.querySelector(".cart-total-amout");
@@ -81,6 +84,7 @@ function removeItem(ID) {
   cartProducts = JSON.parse(localStorage.getItem("cart"));
   renderCart();
 }
+
 cartContainer.addEventListener("click", changeProduct);
 
 //Function to target the remove product btn and run the removeItem function
@@ -120,12 +124,15 @@ function changeNumberOfUnits(action, id) {
 
 // Function to clear the cart from products
 function clearCart() {
-  let emptyCart = [];
   cartContainer.innerHTML = "";
   cartSubtotal.innerHTML = "EGP 0";
   cartCount.innerHTML = `Cart(0)`;
-  localStorage.setItem("cartCount", 0);
-  localStorage.setItem("cart", JSON.stringify(emptyCart));
+  cartCount2.innerHTML = `Cart(0)`;
+  localStorage.removeItem("cartCounter");
+  localStorage.removeItem("cart");
+  localStorage.removeItem("allProducts");
+  updateCartCount();
+  saveProductsToLocal();
 }
 
 clearCartBtn.addEventListener("click", clearCart);

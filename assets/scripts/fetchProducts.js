@@ -12,9 +12,7 @@ async function getProducts() {
 getProducts();
 
 export async function saveProductsToLocal() {
-  let localySavedProducts = JSON.parse(localStorage.getItem("allProducts"));
-
-  if (localySavedProducts && localySavedProducts !== []) {
+  if (JSON.parse(localStorage.getItem("allProducts"))) {
     console.log("its already full");
   } else {
     let allProducts = await getProducts();

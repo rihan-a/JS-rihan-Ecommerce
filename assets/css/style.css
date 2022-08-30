@@ -307,7 +307,6 @@ body {
 #product1 .featured-title {
   padding: 50px;
   height: 200px;
-  border-bottom: var(--general-border);
 }
 
 #product1 .pro-container {

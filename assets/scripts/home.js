@@ -9,12 +9,17 @@ import { saveProductsToLocal } from "./fetchProducts.js";
 let featuredProductsContainer = document.querySelector(
   ".featured-pro-container"
 );
+saveProductsToLocal();
+setTimeout(() => {
+  printFeaturedProducts();
+}, 1000);
+
 let allProducts = JSON.parse(localStorage.getItem("allProducts"));
 // Function to inject featured products into the homepage
 function printFeaturedProducts() {
   allProducts = JSON.parse(localStorage.getItem("allProducts"));
   if (allProducts) {
-    for (let i = 2; i < 6; i++) {
+    for (let i = 0; i < 4; i++) {
       featuredProductsContainer.innerHTML += `<div class="pro" >
       <div class ="img-container"   >
         <img src="${allProducts[i].images[0].src}" alt="${allProducts[i].title}"   class="product-img" productID="${allProducts[i].id}"/>
@@ -40,12 +45,11 @@ function printFeaturedProducts() {
       </div>
       </div>`;
     }
-  } else {
-    alert("No data available.");
   }
+  // else {
+  //   alert("No data available.");
+  // }
 }
-
-printFeaturedProducts();
 
 featuredProductsContainer.addEventListener("click", openProductPage);
 

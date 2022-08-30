@@ -12,6 +12,10 @@ let loading = document.querySelector(".loading-page");
 saveProductsToLocal();
 let modifiedProductsList = JSON.parse(localStorage.getItem("allProducts"));
 
+setTimeout(() => {
+  printProducts();
+}, 1000);
+
 function printProducts() {
   modifiedProductsList = JSON.parse(localStorage.getItem("allProducts"));
   if (modifiedProductsList) {
@@ -42,11 +46,11 @@ function printProducts() {
       </div>
       </div>`;
     });
-  } else {
-    alert("no data available.");
   }
+  // else {
+  //   alert("no data available.");
+  // }
 }
-printProducts();
 
 productsContainer.addEventListener("click", openProductPage);
 //productsContainer.addEventListener("click", addProductToCart);

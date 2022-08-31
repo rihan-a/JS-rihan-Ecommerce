@@ -13,7 +13,6 @@ getProducts();
 
 export async function saveProductsToLocal() {
   if (JSON.parse(localStorage.getItem("allProducts"))) {
-    console.log("its already full");
   } else {
     let allProducts = await getProducts();
     let modifiedProductsList = [];

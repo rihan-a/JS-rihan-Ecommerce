@@ -95,3 +95,16 @@ function changeProduct(e) {
     updateCartCount();
   }
 }
+
+// testing touch events
+let productAddToCartBtn = document.querySelector("product-plus");
+
+productAddToCartBtn.addEventListener("touchstart", () => {
+  productAddToCartBtn.style.color = "red";
+  console.log("touch press");
+});
+
+productAddToCartBtn.addEventListener("touchend", () => {
+  productAddToCartBtn.style.color = "blue";
+  console.log("touch remove");
+});

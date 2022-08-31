@@ -1,6 +1,5 @@
 // Imports
 
-import { openProduct } from "./openProduct.js";
 import { changeNumberOfUnits } from "./changeNumber.js";
 import { updateCartCount } from "./updateCartCount.js";
 import { saveProductsToLocal } from "./fetchProducts.js";
@@ -60,7 +59,11 @@ function openProductPage(e) {
     e.target.classList.contains("product-img")
   ) {
     let id = e.target.getAttribute("productID");
-    openProduct(id);
+    setTimeout(() => {
+      window.location = "product.html";
+    }, 100);
+    console.log(id);
+    localStorage.setItem("productID", id);
   }
 }
 

@@ -1,8 +1,9 @@
 // Imports
-import { openProduct } from "./openProduct.js";
+//import { openProduct } from "./openProduct.js";
 import { changeNumberOfUnits } from "./changeNumber.js";
 import { updateCartCount } from "./updateCartCount.js";
 import { saveProductsToLocal } from "./fetchProducts.js";
+//import { printProductPage } from "./product.js";
 
 // Variables
 let productsContainer = document.querySelector(".pro-container");
@@ -14,7 +15,7 @@ let modifiedProductsList = JSON.parse(localStorage.getItem("allProducts"));
 
 setTimeout(() => {
   printProducts();
-}, 1000);
+}, 100);
 
 function printProducts() {
   modifiedProductsList = JSON.parse(localStorage.getItem("allProducts"));
@@ -53,7 +54,6 @@ function printProducts() {
 }
 
 productsContainer.addEventListener("click", openProductPage);
-//productsContainer.addEventListener("click", addProductToCart);
 
 //Function to target the clicked product and opens the product page
 function openProductPage(e) {
@@ -62,7 +62,13 @@ function openProductPage(e) {
     e.target.classList.contains("product-img")
   ) {
     let id = e.target.getAttribute("productID");
-    openProduct(id);
+    //openProduct(id);
+    setTimeout(() => {
+      window.location = "product.html";
+    }, 100);
+    // printProductPage(id);
+    console.log(id);
+    localStorage.setItem("productID", id);
   }
 }
 
@@ -75,7 +81,6 @@ function changeProduct(e) {
   // plus btn pressed
   if (e.target.classList.contains("product-plus")) {
     let id = e.target.getAttribute("productID");
-    //addToCart(id);
     changeNumberOfUnits("plus", id);
     productsContainer.innerHTML = "";
     printProducts();
@@ -84,7 +89,6 @@ function changeProduct(e) {
     // minus btn pressed
   } else if (e.target.classList.contains("product-minus")) {
     let id = e.target.getAttribute("productID");
-    //removeFromCart(id);
     changeNumberOfUnits("minus", id);
     productsContainer.innerHTML = "";
     printProducts();

@@ -99,12 +99,16 @@ function changeProduct(e) {
 // testing touch events
 let productAddToCartBtn = document.querySelector("product-plus");
 
-productsContainer.addEventListener("touchstart", (e) => {
-  e.target.style.color = "red";
-  console.log("touch press");
-});
+setTimeout(() => {
+  productAddToCartBtn.addEventListener("touchstart", (e) => {
+    e.target.style.backgroundColor = "blue";
+    console.log("touch remove");
+  });
+}, 1000);
 
-productAddToCartBtn.addEventListener("touchend", (e) => {
-  e.target.style.color = "blue";
-  console.log("touch remove");
+productsContainer.addEventListener("touchstart", (e) => {
+  if (e.target.classList == "product-plus") {
+    e.target.style.color = "red";
+  }
+  console.log("touch press");
 });

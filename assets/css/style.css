@@ -367,19 +367,10 @@ body {
   height: 40px;
 }
 
-#product1 .pro .desc h4:hover {
-  font-weight: 600;
-  text-decoration: underline;
-}
-
 #product1 .pro .desc .star {
   padding: 5px 0;
   font-size: 13px;
   color: darkgray;
-}
-
-.pro .star i:hover {
-  color: black;
 }
 
 #product1 .pro .desc-price {
@@ -402,11 +393,6 @@ body {
   transition: all 0.1s ease-in;
 }
 
-#product1 .pro .desc-price a:hover {
-  color: white;
-  background-color: black;
-}
-
 #product1 .pro .desc-brand {
   color: rgb(87, 87, 87);
   font-size: 0.85rem;
@@ -426,7 +412,8 @@ body {
   padding: 6px;
   display: none;
 }
-.pro .add-to-cart-container {
+
+.add-to-cart-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -434,7 +421,7 @@ body {
   width: 25%;
 }
 
-.pro .pro-minus,
+.pro-minus,
 .pro-plus {
   border: solid 1px black;
   display: inline-block;
@@ -443,12 +430,6 @@ body {
   font-weight: 700;
   cursor: pointer;
   transition: all 0.1s ease-in;
-}
-
-.pro .pro-minus:hover,
-.pro .pro-plus:hover {
-  background-color: black;
-  color: white;
 }
 
 /* ------ START LOADING SPINNER ------- */
@@ -541,6 +522,29 @@ body {
 }
 
 /* ------ END LOADING SPINNER ------- */
+
+/* Hover media
+ */
+@media (hover: hover) {
+  .pro-minus:hover,
+  .pro-plus:hover {
+    background-color: black;
+    color: white;
+  }
+
+  #product1 .pro .desc-price a:hover {
+    color: white;
+    background-color: black;
+  }
+  .pro .star i:hover {
+    color: black;
+  }
+  #product1 .pro .desc h4:hover {
+    font-weight: 600;
+    text-decoration: underline;
+  }
+}
+
 /*------- Tablet styling -------- */
 @media (max-width: 1000px) {
   #product1 .featured-title h2 {

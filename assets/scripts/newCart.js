@@ -22,20 +22,22 @@ function addToCart() {
         <img src="${item.images[0].src}" alt="${item.title}" />
       </div>
      <div class="cart-desc">
-        <span class="remove-pro"><a class="remove-product" productID="${
+        <button class="remove-pro" type="button"><a class="remove-product" productID="${
           item.id
-        }" >X</a></span>
+        }" >X</a></button>
 
         <div class="pro-name">
          <span class="pro-brand"> Stoneware</span>
          <h4>${item.title}</h4>
-         <span class="pro-minus" > <a class="product-minus" productID="${
+
+         <button class="pro-minus" type="button" > <a class="product-minus" productID="${
            item.id
-         }"> - </a> </span>
+         }"> - </a> </button>
          <span class="pro-count"> ${item.numberOfUnits} </span>
-        <span class="pro-plus"> <a class="product-plus" productID="${
+
+        <button class="pro-plus" type="button"> <a class="product-plus" productID="${
           item.id
-        }" >  + </a> </span>
+        }" >  + </a> </button>
       </div>
 
       <div class="pro-price">
@@ -111,7 +113,7 @@ function removeProduct(e) {
 }
 cartContainer.addEventListener("click", removeProduct);
 
-// function to remove items from cart
+// function to remove an item from cart
 function removeItem(ID) {
   let updatedCartProducts = allProducts.map((item) => {
     let updatedNumberOfUnits = item.numberOfUnits;

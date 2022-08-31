@@ -27,14 +27,19 @@ function printProductPage() {
       <i class="fas fa-star"></i>
       <i class="fas fa-star"></i>
     </div>
+    
+  <div class="price-cart-container" >
     <div class="desc-price">
       <h5>EGP ${product.variants[0].price}</h5>
     </div>
+
        <div class="add-to-cart-container">
-               <span class="pro-minus" > <a class="product-minus" productID="${product.id}"> - </a> </span>
+               <button class="pro-minus" type="button" > <a class="product-minus" productID="${product.id}"> - </a> </button>
            <span class="pc${product.id} pro-count"> ${product.numberOfUnits} </span>
-          <span class="pro-plus"> <a class="product-plus" productID="${product.id}" > + </a> </span>
+          <button class="pro-plus"  type="button" > <a class="product-plus" productID="${product.id}" > + </a> </button>
      </div>
+   </div>
+
   <div class="product-info">
   ${product.body_html}
   </div>

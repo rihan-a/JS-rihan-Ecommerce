@@ -94,13 +94,13 @@ function changeProduct(e) {
 }
 
 // Touch event for + / - styling
-featuredProductsContainer.addEventListener("touchstart", (e) => {
-  if (
-    e.target.classList.contains("product-plus") ||
-    e.target.classList.contains("product-minus")
-  ) {
-    e.target.style.backgroundColor = "black";
-    e.target.style.color = "white";
-  }
-  console.log("touch press");
-});
+// featuredProductsContainer.addEventListener("touchstart", (e) => {
+//   if (
+//     e.target.classList.contains("product-plus") ||
+//     e.target.classList.contains("product-minus")
+//   ) {
+//     e.target.style.backgroundColor = "black";
+//     e.target.style.color = "white";
+//   }
+//   console.log("touch press");
+// });

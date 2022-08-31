@@ -1050,8 +1050,8 @@ body {
 }
 .cart-header button {
   display: inline-block;
-  margin-right: 40px;
-  width: 120px;
+  margin-right: 20px;
+  width: 230px;
   padding: 5px;
   text-align: center;
   font-size: 0.8rem;
@@ -1151,12 +1151,6 @@ body {
   text-align: center;
 }
 
-/* .cart-products-container .pro-minus:hover,
-.cart-products-container .pro-plus:hover {
-  background-color: black;
-  color: white;
-} */
-
 .cart-products-container .pro-price h5 {
   margin-top: 80px;
   width: 110px;
@@ -1179,6 +1173,9 @@ body {
   transition: all 0.1s ease-in;
   cursor: pointer;
   background-color: white;
+  color: black;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .cart-desc .remove-pro:hover {

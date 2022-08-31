@@ -33,14 +33,16 @@ function printFeaturedProducts() {
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
         </div>
+<div class="price-cart-container" >
         <div class="desc-price">
           <h5>EGP ${allProducts[i].variants[0].price}</h5>
         </div>
           <div class="add-to-cart-container">
-             <span class="pro-minus" > <a class="product-minus" productID="${allProducts[i].id}"> - </a> </span>
+             <button class="pro-minus" type="button" > <a class="product-minus" productID="${allProducts[i].id}"> - </a> </button>
          <span class="pc${allProducts[i].id} pro-count"> ${allProducts[i].numberOfUnits} </span>
-        <span class="pro-plus"> <a class="product-plus" productID="${allProducts[i].id}" > + </a> </span>
+        <button class="pro-plus" type="button"> <a class="product-plus" productID="${allProducts[i].id}" > + </a> </button>
         </div>
+</div>
       </div>
       </div>`;
     }
@@ -90,3 +92,15 @@ function changeProduct(e) {
     updateCartCount();
   }
 }
+
+// Touch event for + / - styling
+featuredProductsContainer.addEventListener("touchstart", (e) => {
+  if (
+    e.target.classList.contains("product-plus") ||
+    e.target.classList.contains("product-minus")
+  ) {
+    e.target.style.backgroundColor = "black";
+    e.target.style.color = "white";
+  }
+  console.log("touch press");
+});

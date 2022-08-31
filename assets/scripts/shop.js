@@ -36,14 +36,18 @@ function printProducts() {
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
         </div>
+
+<div class="price-cart-container" >
         <div class="desc-price">
           <h5>EGP ${item.variants[0].price}</h5>
         </div>
+
           <div class="add-to-cart-container">
-             <span class="pro-minus" > <a class="product-minus" productID="${item.id}"> - </a> </span>
+             <button class="pro-minus" type="button" > <a class="product-minus" productID="${item.id}"> - </a> </button>
          <span class="pc${item.id} pro-count"> ${item.numberOfUnits} </span>
-        <span class="pro-plus"> <a class="product-plus" productID="${item.id}" > + </a> </span>
+        <button class="pro-plus" type="button"> <a class="product-plus" productID="${item.id}" > + </a> </button>
         </div>
+ </div>
       </div>
       </div>`;
     });
@@ -73,7 +77,6 @@ function openProductPage(e) {
 }
 
 // Changing number of products added to cart in the shop page
-
 productsContainer.addEventListener("click", changeProduct);
 
 //Function to change a product count added to cart
@@ -96,19 +99,14 @@ function changeProduct(e) {
   }
 }
 
-// testing touch events
-let productAddToCartBtn = document.querySelector("product-plus");
-
-setTimeout(() => {
-  productAddToCartBtn.addEventListener("touchstart", (e) => {
-    e.target.style.backgroundColor = "blue";
-    console.log("touch remove");
-  });
-}, 1000);
-
+// Touch event for + / - styling
 productsContainer.addEventListener("touchstart", (e) => {
-  if (e.target.classList == "product-plus") {
-    e.target.style.color = "red";
+  if (
+    e.target.classList.contains("product-plus") ||
+    e.target.classList.contains("product-minus")
+  ) {
+    e.target.style.backgroundColor = "black";
+    e.target.style.color = "white";
   }
   console.log("touch press");
 });

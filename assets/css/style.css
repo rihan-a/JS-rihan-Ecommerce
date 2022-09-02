@@ -70,9 +70,33 @@ body {
   padding: 0 40px;
 }
 
+/* --- Add to cart Button + / -   --- */
+
+.pro-minus,
+.pro-plus {
+  border: solid 1px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+  color: black;
+  background-color: white;
+}
+
 @media (max-width: 799px) {
   .container {
     padding: 0 20px;
+  }
+
+  .pro-minus,
+  .pro-plus {
+    width: 35px;
+    height: 35px;
   }
 }
 
@@ -418,20 +442,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin: 5px 0;
-  width: 45%;
-}
-
-.pro-minus,
-.pro-plus {
-  border: solid 1px black;
-  display: inline-block;
-  padding: 0 4.5px;
-  font-size: 1.2rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.1s ease-in;
-  color: black;
-  background-color: white;
+  width: 55%;
 }
 
 .price-cart-container {
@@ -648,7 +659,7 @@ body {
 
   .pro .add-to-cart-container {
     margin: 5px 0;
-    width: 65%;
+    width: 75%;
   }
 }
 
@@ -1049,7 +1060,9 @@ body {
   border-bottom: var(--general-border);
 }
 .cart-header button {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-right: 20px;
   width: 230px;
   padding: 5px;
@@ -1261,6 +1274,10 @@ body {
     border-right: var(--general-border);
   }
 
+  .cart-header button {
+    margin-right: 10px;
+  }
+
   .cart-products-container img {
     width: 100%;
     height: 100%;
@@ -1285,14 +1302,12 @@ body {
 
   .cart-desc .remove-pro {
     top: unset;
-    bottom: 7px;
+    /* bottom: 7px; */
     right: 5px;
   }
 
   .cart-header a {
-    margin-right: 20px;
-    width: 150px;
-    padding: 5px;
+    width: 90px;
   }
 
   #header {
@@ -1388,6 +1403,10 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .cart-product .pro-name {
+    margin-top: 20px;
   }
 }
 
@@ -1504,7 +1523,7 @@ body {
     margin-bottom: 20px;
   }
   .single-product .desc-price h5 {
-    margin-bottom: 0;
+    margin-bottom: 7px;
     font-size: 1.2rem;
   }
 }
@@ -1532,6 +1551,14 @@ body {
     width: 100%;
     vertical-align: bottom;
     border-bottom: unset;
+  }
+
+  .single-product .add-to-cart-container {
+    width: 40%;
+  }
+
+  .single-product .price-cart-container {
+    align-items: flex-start;
   }
 }
 

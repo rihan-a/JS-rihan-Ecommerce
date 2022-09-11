@@ -1,5 +1,4 @@
 // Imports
-
 import { changeNumberOfUnits } from "./changeNumber.js";
 import { updateCartCount } from "./updateCartCount.js";
 import { saveProductsToLocal } from "./fetchProducts.js";
@@ -8,6 +7,8 @@ import { saveProductsToLocal } from "./fetchProducts.js";
 let featuredProductsContainer = document.querySelector(
   ".featured-pro-container"
 );
+let loading = document.querySelector(".loading-page");
+
 saveProductsToLocal();
 setTimeout(() => {
   printFeaturedProducts();
@@ -16,6 +17,7 @@ setTimeout(() => {
 let allProducts = JSON.parse(localStorage.getItem("allProducts"));
 // Function to inject featured products into the homepage
 function printFeaturedProducts() {
+  loading.style.display = "none";
   allProducts = JSON.parse(localStorage.getItem("allProducts"));
   if (allProducts) {
     for (let i = 0; i < 4; i++) {

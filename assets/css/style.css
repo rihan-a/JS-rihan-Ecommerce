@@ -462,6 +462,10 @@ body {
   align-items: center;
 }
 
+#hero .loading-page {
+  display: none;
+}
+
 .lds-spinner {
   color: official;
   display: inline-block;

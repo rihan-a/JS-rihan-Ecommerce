@@ -47,9 +47,6 @@ function printFeaturedProducts() {
       </div>`;
     }
   }
-  // else {
-  //   alert("No data available.");
-  // }
 }
 
 featuredProductsContainer.addEventListener("click", openProductPage);

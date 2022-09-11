@@ -589,6 +589,11 @@ body {
     height: unset;
   }
 
+  #hero .loading-page {
+    display: flex;
+    height: 90vh;
+  }
+
   .price-cart-container {
     flex-direction: column;
   }

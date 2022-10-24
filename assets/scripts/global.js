@@ -16,18 +16,18 @@ hamburgerMenu.addEventListener("click", showHideMenu, false);
 
 // function to show/hide the hamburger menu on small screens
 function showHideMenu() {
-  console.log("btn clicked");
-  if (hamburgerMenu.value == "opened") {
-    menuLeft.style.display = "none";
-    menuRight.style.display = "none";
-    hamburgerMenu.value = "closed";
-    hamburgerMenu.innerHTML = '<i class="fi fi-bs-menu-burger"></i>';
-  } else {
-    menuLeft.style.display = "unset";
-    menuRight.style.display = "unset";
-    hamburgerMenu.value = "opened";
-    hamburgerMenu.innerHTML = '<i class="fi fi-bs-cross"></i>';
-  }
+    console.log("btn clicked");
+    if (hamburgerMenu.value == "opened") {
+        menuLeft.style.display = "none";
+        menuRight.style.display = "none";
+        hamburgerMenu.value = "closed";
+        hamburgerMenu.innerHTML = '<i class="fi fi-bs-menu-burger"></i>';
+    } else {
+        menuLeft.style.display = "unset";
+        menuRight.style.display = "unset";
+        hamburgerMenu.value = "opened";
+        hamburgerMenu.innerHTML = '<i class="fi fi-bs-cross"></i>';
+    }
 }
 
 // User signing in --------------------------------------------------->>>>
@@ -36,54 +36,35 @@ let notSignedUser = document.querySelector("#not-signed-in");
 let signedUser = document.querySelector("#signed-in-user");
 
 if (localStorage.getItem("email")) {
-  signedUser.style.display = "flex";
-  notSignedUser.style.display = "none";
+    signedUser.style.display = "flex";
+    notSignedUser.style.display = "none";
 } else {
-  signedUser.style.display = "none";
-  notSignedUser.style.display = "flex";
+    signedUser.style.display = "none";
+    notSignedUser.style.display = "flex";
 }
 
 signedUser.addEventListener("click", logOut);
 
 function logOut() {
-  localStorage.clear();
-  setTimeout(() => {
-    window.location = "index.html";
-  }, 1000);
+    localStorage.clear();
+    setTimeout(() => {
+        window.location = "index.html";
+    }, 1000);
 }
 
 // Function to check if the user is logged in or not
 function checkLogedInUser() {
-  if (localStorage.getItem("username")) {
-  } else {
-    window.location = "login.html";
-  }
-}
-
-// fix teh hover problem on ios
-function hasTouch() {
-  return (
-    "ontouchstart" in document.documentElement ||
-    navigator.maxTouchPoints > 0 ||
-    navigator.msMaxTouchPoints > 0
-  );
-}
-
-if (hasTouch()) {
-  // remove all the :hover stylesheets
-  try {
-    // prevent exception on browsers not supporting DOM styleSheets properly
-    for (var si in document.styleSheets) {
-      var styleSheet = document.styleSheets[si];
-      if (!styleSheet.rules) continue;
-
-      for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
-        if (!styleSheet.rules[ri].selectorText) continue;
-
-        if (styleSheet.rules[ri].selectorText.match(":hover")) {
-          styleSheet.deleteRule(ri);
-        }
-      }
+    if (localStorage.getItem("username")) {
+    } else {
+        window.location = "login.html";
     }
-  } catch (ex) {}
+}
+
+// fix the hover problem on ios
+function hasTouch() {
+    return (
+        "ontouchstart" in document.documentElement ||
+        navigator.maxTouchPoints > 0 ||
+        navigator.msMaxTouchPoints > 0
+    );
 }

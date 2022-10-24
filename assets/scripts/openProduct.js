@@ -1,14 +1,11 @@
-// A function to open a product page and saves that product to local storage
-export function openProduct(theID) {
-  let allProducts = JSON.parse(localStorage.getItem("allProducts"));
+import { printProductPage } from "./product.js";
 
-  allProducts.forEach(function (item) {
-    if (item.id == theID) {
-      localStorage.setItem("productPage", JSON.stringify(item));
-    }
-    setTimeout(() => {
-      window.location = "product.html";
-    }, 200);
-  });
-  printProductPage();
+// A function to open a product page and saves that product to local storage
+function openProduct(id) {
+  setTimeout(() => {
+    window.location = "product.html";
+  }, 100);
+  printProductPage(id);
+  console.log(id);
+  localStorage.setItem("productID", id);
 }

@@ -5,23 +5,23 @@ import { saveProductsToLocal } from "./fetchProducts.js";
 
 // Variables
 let featuredProductsContainer = document.querySelector(
-  ".featured-pro-container"
+    ".featured-pro-container"
 );
 let loading = document.querySelector(".loading-page");
 
 saveProductsToLocal();
 setTimeout(() => {
-  printFeaturedProducts();
+    printFeaturedProducts();
 }, 1000);
 
 let allProducts = JSON.parse(localStorage.getItem("allProducts"));
 // Function to inject featured products into the homepage
 function printFeaturedProducts() {
-  loading.style.display = "none";
-  allProducts = JSON.parse(localStorage.getItem("allProducts"));
-  if (allProducts) {
-    for (let i = 0; i < 4; i++) {
-      featuredProductsContainer.innerHTML += `<div class="pro" >
+    loading.style.display = "none";
+    allProducts = JSON.parse(localStorage.getItem("allProducts"));
+    if (allProducts) {
+        for (let i = 0; i < 4; i++) {
+            featuredProductsContainer.innerHTML += `<div class="pro" >
       <div class ="img-container"   >
         <img src="${allProducts[i].images[0].src}" alt="${allProducts[i].title}"   class="product-img" productID="${allProducts[i].id}"/>
       </div> 
@@ -47,59 +47,47 @@ function printFeaturedProducts() {
 </div>
       </div>
       </div>`;
+        }
     }
-  }
 }
 
 featuredProductsContainer.addEventListener("click", openProductPage);
 
 //Function to target the clicked product and opens the product page
 function openProductPage(e) {
-  if (
-    e.target.classList.contains("product-title") ||
-    e.target.classList.contains("product-img")
-  ) {
-    let id = e.target.getAttribute("productID");
-    setTimeout(() => {
-      window.location = "product.html";
-    }, 100);
-    console.log(id);
-    localStorage.setItem("productID", id);
-  }
+    if (
+        e.target.classList.contains("product-title") ||
+        e.target.classList.contains("product-img")
+    ) {
+        let id = e.target.getAttribute("productID");
+        setTimeout(() => {
+            window.location = "product.html";
+        }, 100);
+        console.log(id);
+        localStorage.setItem("productID", id);
+    }
 }
 
 featuredProductsContainer.addEventListener("click", changeProduct);
 
 //Function to change a product count added to cart
 function changeProduct(e) {
-  // plus btn pressed
-  if (e.target.classList.contains("product-plus")) {
-    let id = e.target.getAttribute("productID");
-    //addToCart(id);
-    changeNumberOfUnits("plus", id);
-    featuredProductsContainer.innerHTML = "";
-    printFeaturedProducts();
-    updateCartCount();
+    // plus btn pressed
+    if (e.target.classList.contains("product-plus")) {
+        let id = e.target.getAttribute("productID");
+        //addToCart(id);
+        changeNumberOfUnits("plus", id);
+        featuredProductsContainer.innerHTML = "";
+        printFeaturedProducts();
+        updateCartCount();
 
-    // minus btn pressed
-  } else if (e.target.classList.contains("product-minus")) {
-    let id = e.target.getAttribute("productID");
-    //removeFromCart(id);
-    changeNumberOfUnits("minus", id);
-    featuredProductsContainer.innerHTML = "";
-    printFeaturedProducts();
-    updateCartCount();
-  }
+        // minus btn pressed
+    } else if (e.target.classList.contains("product-minus")) {
+        let id = e.target.getAttribute("productID");
+        //removeFromCart(id);
+        changeNumberOfUnits("minus", id);
+        featuredProductsContainer.innerHTML = "";
+        printFeaturedProducts();
+        updateCartCount();
+    }
 }
-
-// Touch event for + / - styling
-// featuredProductsContainer.addEventListener("touchstart", (e) => {
-//   if (
-//     e.target.classList.contains("product-plus") ||
-//     e.target.classList.contains("product-minus")
-//   ) {
-//     e.target.style.backgroundColor = "black";
-//     e.target.style.color = "white";
-//   }
-//   console.log("touch press");
-// });

@@ -1,9 +1,7 @@
 // Imports
-//import { openProduct } from "./openProduct.js";
 import { changeNumberOfUnits } from "./changeNumber.js";
 import { updateCartCount } from "./updateCartCount.js";
 import { saveProductsToLocal } from "./fetchProducts.js";
-//import { printProductPage } from "./product.js";
 
 // Variables
 let productsContainer = document.querySelector(".pro-container");
@@ -14,15 +12,15 @@ saveProductsToLocal();
 let modifiedProductsList = JSON.parse(localStorage.getItem("allProducts"));
 
 setTimeout(() => {
-  printProducts();
+    printProducts();
 }, 100);
 
 function printProducts() {
-  modifiedProductsList = JSON.parse(localStorage.getItem("allProducts"));
-  if (modifiedProductsList) {
-    loading.style.display = "none";
-    modifiedProductsList.forEach(function (item) {
-      productsContainer.innerHTML += `<div class="pro" >
+    modifiedProductsList = JSON.parse(localStorage.getItem("allProducts"));
+    if (modifiedProductsList) {
+        loading.style.display = "none";
+        modifiedProductsList.forEach(function (item) {
+            productsContainer.innerHTML += `<div class="pro" >
       <div class ="img-container"   >
         <img src="${item.images[0].src}" alt="${item.title}"   class="product-img" productID="${item.id}"/>
       </div> 
@@ -50,30 +48,27 @@ function printProducts() {
  </div>
       </div>
       </div>`;
-    });
-  }
-  // else {
-  //   alert("no data available.");
-  // }
+        });
+    }
 }
 
 productsContainer.addEventListener("click", openProductPage);
 
 //Function to target the clicked product and opens the product page
 function openProductPage(e) {
-  if (
-    e.target.classList.contains("product-title") ||
-    e.target.classList.contains("product-img")
-  ) {
-    let id = e.target.getAttribute("productID");
-    //openProduct(id);
-    setTimeout(() => {
-      window.location = "product.html";
-    }, 100);
-    // printProductPage(id);
-    console.log(id);
-    localStorage.setItem("productID", id);
-  }
+    if (
+        e.target.classList.contains("product-title") ||
+        e.target.classList.contains("product-img")
+    ) {
+        let id = e.target.getAttribute("productID");
+        //openProduct(id);
+        setTimeout(() => {
+            window.location = "product.html";
+        }, 100);
+        // printProductPage(id);
+        console.log(id);
+        localStorage.setItem("productID", id);
+    }
 }
 
 // Changing number of products added to cart in the shop page
@@ -81,32 +76,20 @@ productsContainer.addEventListener("click", changeProduct);
 
 //Function to change a product count added to cart
 function changeProduct(e) {
-  // plus btn pressed
-  if (e.target.classList.contains("product-plus")) {
-    let id = e.target.getAttribute("productID");
-    changeNumberOfUnits("plus", id);
-    productsContainer.innerHTML = "";
-    printProducts();
-    updateCartCount();
+    // plus btn pressed
+    if (e.target.classList.contains("product-plus")) {
+        let id = e.target.getAttribute("productID");
+        changeNumberOfUnits("plus", id);
+        productsContainer.innerHTML = "";
+        printProducts();
+        updateCartCount();
 
-    // minus btn pressed
-  } else if (e.target.classList.contains("product-minus")) {
-    let id = e.target.getAttribute("productID");
-    changeNumberOfUnits("minus", id);
-    productsContainer.innerHTML = "";
-    printProducts();
-    updateCartCount();
-  }
+        // minus btn pressed
+    } else if (e.target.classList.contains("product-minus")) {
+        let id = e.target.getAttribute("productID");
+        changeNumberOfUnits("minus", id);
+        productsContainer.innerHTML = "";
+        printProducts();
+        updateCartCount();
+    }
 }
-
-// Touch event for + / - styling
-// productsContainer.addEventListener("touchstart", (e) => {
-//   if (
-//     e.target.classList.contains("product-plus") ||
-//     e.target.classList.contains("product-minus")
-//   ) {
-//     e.target.style.backgroundColor = "black";
-//     e.target.style.color = "white";
-//   }
-//   console.log("touch press");
-// });

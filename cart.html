@@ -1,144 +1,150 @@
 <!DOCTYPE html>
 <html lang="en" ontouchmove>
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn-uicons.flaticon.com/uicons-bold-straight/css/uicons-bold-straight.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-    />
-    <link rel="icon" type="image/jpeg" href="./assets/imgs/R_rihan_logo.jpeg" />
-    <title>rihan store | Cart</title>
-  </head>
-
-  <body onclick>
-    <!-- Header section -->
-    <section id="header">
-      <div class="header-left">
-        <ul id="navbar">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="shop.html">Shop</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-      </div>
-      <div class="header-hamburger" value="closed">
-        <i class="fi fi-bs-menu-burger"></i>
-      </div>
-
-      <a href="index.html" class="header-logo">
-        <img src="./assets/imgs/rihan-logo.png" class="logo" alt=""
-      /></a>
-
-      <a href="cart.html" class="cart-btn-phone cart-btn">Cart(0)</a>
-
-      <div class="header-right">
-        <ul id="navbar">
-          <li><a href="contact.html">Contact</a></li>
-
-          <li id="not-signed-in">
-            <a href="login.html">Login</a>
-          </li>
-
-          <li id="signed-in-user">
-            <a href="#"> Logout</a>
-          </li>
-
-          <li>
-            <a href="cart.html" class="cart-btn2 active">Cart(0)</a>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Cart section -->
-
-    <section class="cart-section">
-      <div class="cart-header">
-        <h3>Cart</h3>
-        <a class="clear-cart">Clear Cart</a>
-      </div>
-      <div class="cart-products-container">
-        <!--  Inject Html from JS -->
-      </div>
-      <!-- subtoal / checkout -->
-      <div class="checkout">
-        <div class="cart-subtotal">
-          <h5>Subtotal</h5>
-          <h5 class="cart-total-amout">EGP 0</h5>
-        </div>
-        <input type="submit" value="CHECK OUT" />
-      </div>
-    </section>
-
-    <!-- Subscribe section  -->
-
-    <section class="subscribe">
-      <div>
-        <h5>SUBSCRIBE TO FIND OUT ABOUT ALL OUR NEWS AND OFFERS.</h5>
-      </div>
-      <div class="subscribe-inputs">
-        <input
-          type="email"
-          placeholder="EMAIL ADDRESS
-          "
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css"
         />
-        <button>SUBSCRIBE →</button>
-      </div>
-    </section>
+        <link
+            rel="stylesheet"
+            href="https://cdn-uicons.flaticon.com/uicons-bold-straight/css/uicons-bold-straight.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        />
+        <link
+            rel="icon"
+            type="image/jpeg"
+            href="./assets/imgs/R_rihan_logo.jpeg"
+        />
+        <title>rihan store | Cart</title>
+    </head>
 
-    <!-- Footer  -->
-    <section class="footer">
-      <div class="footer-container">
-        <div class="footer-logo">
-          <img src="./assets/imgs/rihan-logo.png" alt="" />
-        </div>
-        <div class="footer-slogan">
-          <h5>Handmade products, one of a kind by local artisans.</h5>
-        </div>
+    <body onclick>
+        <!-- Header section -->
+        <section id="header">
+            <div class="header-left">
+                <ul id="navbar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+            <div class="header-hamburger" value="closed">
+                <i class="fi fi-bs-menu-burger"></i>
+            </div>
 
-        <div class="footer-menu">
-          <ul id="footer-navbar">
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="#0">Returns</a></li>
-            <li><a href="#0">Shipping</a></li>
-            <li><a href="#0">How to buy</a></li>
-            <li><a href="about.html">About us</a></li>
-            <li><a href="#0">Privacy</a></li>
-            <li><a href="#0">Terms</a></li>
-          </ul>
-        </div>
+            <a href="index.html" class="header-logo">
+                <img src="./assets/imgs/rihan-logo.png" class="logo" alt=""
+            /></a>
 
-        <div class="footer-social">
-          <ul>
-            <li>
-              <a
-                href="https://www.instagram.com/rihan_designhouse/"
-                target="_blank"
-                >Instagram</a
-              >
-            </li>
-            <li><a href="#0">facebook</a></li>
-            <li><a href="#0">email</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-credits">
-        <h5>Copyright © 2022 rihan store.</h5>
-      </div>
-    </section>
+            <a href="cart.html" class="cart-btn-phone cart-btn">Cart(0)</a>
 
-    <script type="module" src="./assets/scripts/cart.js"></script>
-    <script type="module" src="./assets/scripts/global.js"></script>
-  </body>
+            <div class="header-right">
+                <ul id="navbar">
+                    <li><a href="contact.html">Contact</a></li>
+
+                    <li id="not-signed-in">
+                        <a href="login.html">Login</a>
+                    </li>
+
+                    <li id="signed-in-user">
+                        <a href="#"> Logout</a>
+                    </li>
+
+                    <li>
+                        <a href="cart.html" class="cart-btn2 active">Cart(0)</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Cart section -->
+
+        <section class="cart-section">
+            <div class="cart-header">
+                <h3>Cart</h3>
+                <button type="button">
+                    <a class="clear-cart">Clear Cart</a>
+                </button>
+            </div>
+            <div class="cart-products-container">
+                <!--  Inject Html from JS -->
+            </div>
+            <!-- subtoal / checkout -->
+            <div class="checkout">
+                <div class="cart-subtotal">
+                    <h5>Subtotal</h5>
+                    <h5 class="cart-total-amout">EGP 0</h5>
+                </div>
+                <input type="submit" value="CHECK OUT" />
+            </div>
+        </section>
+
+        <!-- Subscribe section  -->
+
+        <section class="subscribe">
+            <div>
+                <h5>SUBSCRIBE TO FIND OUT ABOUT ALL OUR NEWS AND OFFERS.</h5>
+            </div>
+            <div class="subscribe-inputs">
+                <input
+                    type="email"
+                    placeholder="EMAIL ADDRESS
+          "
+                />
+                <button>SUBSCRIBE →</button>
+            </div>
+        </section>
+
+        <!-- Footer  -->
+        <section class="footer">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <img src="./assets/imgs/rihan-logo.png" alt="" />
+                </div>
+                <div class="footer-slogan">
+                    <h5>Handmade products, one of a kind by local artisans.</h5>
+                </div>
+
+                <div class="footer-menu">
+                    <ul id="footer-navbar">
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#0">Returns</a></li>
+                        <li><a href="#0">Shipping</a></li>
+                        <li><a href="#0">How to buy</a></li>
+                        <li><a href="about.html">About us</a></li>
+                        <li><a href="#0">Privacy</a></li>
+                        <li><a href="#0">Terms</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social">
+                    <ul>
+                        <li>
+                            <a
+                                href="https://www.instagram.com/rihan_designhouse/"
+                                target="_blank"
+                                >Instagram</a
+                            >
+                        </li>
+                        <li><a href="#0">facebook</a></li>
+                        <li><a href="#0">email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-credits">
+                <h5>Copyright © 2022 rihan store.</h5>
+            </div>
+        </section>
+
+        <script type="module" src="./assets/scripts/cart.js"></script>
+        <script type="module" src="./assets/scripts/global.js"></script>
+    </body>
 </html>
